@@ -7,9 +7,14 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/boilerplate/templates/actor/parts/actor-features.html",
-    "systems/boilerplate/templates/actor/parts/actor-items.html",
-    "systems/boilerplate/templates/actor/parts/actor-spells.html",
-    "systems/boilerplate/templates/actor/parts/actor-effects.html",
+    "systems/ivys_torchbearer/templates/actor/parts/actor-features.hbs",
+    "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs",
+    "systems/ivys_torchbearer/templates/actor/parts/actor-spells.hbs",
+    "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs",
+    
+    // "systems/ivys_torchbearer/templates/actor/parts/actor-features.html",
+    // "systems/ivys_torchbearer/templates/actor/parts/actor-items.html",
+    // "systems/ivys_torchbearer/templates/actor/parts/actor-spells.html",
+    // "systems/ivys_torchbearer/templates/actor/parts/actor-effects.html",
   ]);
 };

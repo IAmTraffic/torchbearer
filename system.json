@@ -1,18 +1,19 @@
 {
-  "id": "boilerplate",
-  "title": "Boilerplate",
-  "description": "The Boilerplate system for FoundryVTT!",
-  "version": "1.2.0",
+  "id": "ivys_torchbearer",
+  "title": "Torchbearer",
+  "description": "The Torchbearer system for FoundryVTT!",
+  "version": "0.0.0",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.287",
-    "maximum": 12
+    "verified": "11.308"
   },
   "authors": [{
+    "name": "PoisonIvy"
+  },{
     "name": "Asacolips"
   }],
-  "esmodules": ["module/boilerplate.mjs"],
-  "styles": ["css/boilerplate.css"],
+  "esmodules": ["module/ivys_torchbearer.mjs"],
+  "styles": ["css/ivys_torchbearer.css"],
   "scripts": [],
   "packs": [],
   "languages": [

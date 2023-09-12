@@ -2,12 +2,12 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class BoilerplateItemSheet extends ItemSheet {
+export class TorchbearerItemSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["boilerplate", "sheet", "item"],
+      classes: ["torchbearer", "sheet", "item"],
       width: 520,
       height: 480,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -16,13 +16,14 @@ export class BoilerplateItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/boilerplate/templates/item";
+    const path = "systems/ivys_torchbearer/templates/item";
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 
     // Alternatively, you could use the following return statement to do a
     // unique item sheet by type, like `weapon-sheet.html`.
-    return `${path}/item-${this.item.type}-sheet.html`;
+    return `${path}/item-${this.item.type}-sheet.hbs`;
+    // return `${path}/item-${this.item.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */

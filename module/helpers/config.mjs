@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const TORCHBEARER = {};
 
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
- BOILERPLATE.abilities = {
-  "str": "BOILERPLATE.AbilityStr",
-  "dex": "BOILERPLATE.AbilityDex",
-  "con": "BOILERPLATE.AbilityCon",
-  "int": "BOILERPLATE.AbilityInt",
-  "wis": "BOILERPLATE.AbilityWis",
-  "cha": "BOILERPLATE.AbilityCha"
+TORCHBEARER.abilities = {
+  "str": "TORCHBEARER.AbilityStr",
+  "dex": "TORCHBEARER.AbilityDex",
+  "con": "TORCHBEARER.AbilityCon",
+  "int": "TORCHBEARER.AbilityInt",
+  "wis": "TORCHBEARER.AbilityWis",
+  "cha": "TORCHBEARER.AbilityCha"
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  "str": "BOILERPLATE.AbilityStrAbbr",
-  "dex": "BOILERPLATE.AbilityDexAbbr",
-  "con": "BOILERPLATE.AbilityConAbbr",
-  "int": "BOILERPLATE.AbilityIntAbbr",
-  "wis": "BOILERPLATE.AbilityWisAbbr",
-  "cha": "BOILERPLATE.AbilityChaAbbr"
+TORCHBEARER.abilityAbbreviations = {
+  "str": "TORCHBEARER.AbilityStrAbbr",
+  "dex": "TORCHBEARER.AbilityDexAbbr",
+  "con": "TORCHBEARER.AbilityConAbbr",
+  "int": "TORCHBEARER.AbilityIntAbbr",
+  "wis": "TORCHBEARER.AbilityWisAbbr",
+  "cha": "TORCHBEARER.AbilityChaAbbr"
 };

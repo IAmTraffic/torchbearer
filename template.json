@@ -1,52 +1,152 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
-    "templates": {
-      "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
+    "types": ["Character", "Monster", "Grind"],
+    "Character": {
+      "who_you_are": {
+        "stock": "",
+        "class": "",
+        "age": "",
+        "home": "",
+        "raiment": "",
+        "parents": "",
+        "mentor": "",
+        "friend": "",
+        "enemy": "",
+        "level": ""
+      },
+      "what_you_fight_for": {
+        "belief": "",
+        "creed": "",
+        "goal": "",
+        "instinct": ""
+      },
+      "traits": {
+          "trait_0": {
+            "name": "",
+            "level": 1,
+            "beneficial_uses_spent": 0,
+            "checks_gathered": 0
+          },
+          "trait_1": {
+            "name": "",
+            "level": 1,
+            "beneficial_uses_spent": 0,
+            "checks_gathered": 0
+          },
+          "trait_2": {
+            "name": "",
+            "level": 1,
+            "beneficial_uses_spent": 0,
+            "checks_gathered": 0
+          },
+          "trait_3": {
+            "name": "",
+            "level": 1,
+            "beneficial_uses_spent": 0,
+            "checks_gathered": 0
+          }
+      },
+      "artha": {
+        "fate": {
+          "current": 0,
+          "spent": 0
         },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
-      }
-    },
-    "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
+        "persona": {
+          "current": 0,
+          "spent": 0
         }
       },
+      "conditions": {
+        "fresh": false,
+        "hungry_and_thirsty": false,
+        "angry": false,
+        "afraid": false,
+        "exhausted": false,
+        "injured": false,
+        "sick": false,
+        "dead": false
+      },
       "abilities": {
-        "str": {
-          "value": 10
+        "will": {
+          "rating": 1,
+          "passes": 0,
+          "fails": 0
         },
-        "dex": {
-          "value": 10
+        "health": {
+          "rating": 1,
+          "passes": 0,
+          "fails": 0
         },
-        "con": {
-          "value": 10
+        "nature": {
+          "rating": 1,
+          "max": 1,
+          "passes": 0,
+          "fails": 0
         },
-        "int": {
-          "value": 10
+        "resources": {
+          "rating": 1,
+          "passes": 0,
+          "fails": 0
         },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "circles": {
+          "rating": 1,
+          "passes": 0,
+          "fails": 0
         }
+      },
+      "prescedence": 0,
+      "might": 1,
+      "skills": {
+        "alchemist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "archanist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "armorer": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "cartographer": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "commander": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "cook": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "criminal": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "dungeoneer": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "fighter": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "haggler": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "healer": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "hunter": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "lore_master": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "manipulator": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "mentor": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "orator": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "pathfinder": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "persuader": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "rider": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "ritualist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "scavenger": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "scholar": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "scout": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "survivalist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
+        "theologian": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"}
+      },
+      "wises": {
+        "wise_0": {"pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_1": {"pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_2": {"pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_3": {"pass": false, "fail": false, "fate": false, "persona": false}
+      },
+      "inventory": {
+
+      },
+      "magic": {
+
+      },
+      "bio": {
+        "allies_and_enemies": [],
+        "biography": "",
+        "notes": ""
       }
     },
-    "npc": {
-      "templates": ["base"],
+    "Monster": {
       "cr": 0
+    },
+    "Grind": {
+      "turn": 0,
+      "actors": []
     }
   },
   "Item": {

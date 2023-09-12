@@ -4,13 +4,14 @@ import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/ef
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class BoilerplateActorSheet extends ActorSheet {
+export class TorchbearerActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["boilerplate", "sheet", "actor"],
-      template: "systems/boilerplate/templates/actor/actor-sheet.html",
+      classes: ["torchbearer", "sheet", "actor"],
+      // template: "systems/ivys_torchbearer/templates/actor/actor-sheet.hbs",
+      // template: "systems/ivys_torchbearer/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -19,7 +20,8 @@ export class BoilerplateActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/boilerplate/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/ivys_torchbearer/templates/actor/actor-${this.actor.type}-sheet.hbs`;
+    // return `systems/ivys_torchbearer/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -69,7 +71,7 @@ export class BoilerplateActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.BOILERPLATE.abilities[k]) ?? k;
+      v.label = game.i18n.localize(CONFIG.TORCHBEARER.abilities[k]) ?? k;
     }
   }
 
