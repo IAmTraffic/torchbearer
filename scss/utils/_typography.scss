@@ -1,2 +1,13 @@
-$font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
+@font-face {
+    font-family: "Souvenir";
+    src: url(Souvenir.ttf) format("truetype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Souvenir";
+    src: url(SouvenirB.ttf) format("truetype");
+    font-style: bold;
+}
+
+$font-primary: 'Souvenir', bold;
+$font-secondary: 'Souvenir', normal;

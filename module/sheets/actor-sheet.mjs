@@ -12,8 +12,8 @@ export class TorchbearerActorSheet extends ActorSheet {
       classes: ["torchbearer", "sheet", "actor"],
       // template: "systems/ivys_torchbearer/templates/actor/actor-sheet.hbs",
       // template: "systems/ivys_torchbearer/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 700,
+      height: 800,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
     });
   }
@@ -217,6 +217,7 @@ export class TorchbearerActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
+      console.log(dataset)
       let label = dataset.label ? `[ability] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({

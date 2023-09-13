@@ -12,7 +12,7 @@
         "mentor": "",
         "friend": "",
         "enemy": "",
-        "level": ""
+        "level": 1
       },
       "what_you_fight_for": {
         "belief": "",
@@ -57,41 +57,50 @@
         }
       },
       "conditions": {
-        "fresh": false,
-        "hungry_and_thirsty": false,
-        "angry": false,
-        "afraid": false,
-        "exhausted": false,
-        "injured": false,
-        "sick": false,
-        "dead": false
+        "fresh": {"value": false, "display_name": "Fresh", "hover_text": "+1D all tests until other condition", "recovery": ""},
+        "hungry_and_thirsty": {"value": false, "display_name": "Hungry & Thirsty", "hover_text": "-1 disposition to any conflict", "recovery": ""},
+        "angry": {"value": false, "display_name": "Angry", "hover_text": "No wises or beneficial traits", "recovery": "Will Ob 2"},
+        "afraid": {"value": false, "display_name": "Afraid", "hover_text": "No help or use beginners luck", "recovery": "Will Ob 3"},
+        "exhausted": {"value": false, "display_name": "Exhausted", "hover_text": "-1 disposition to any conflict;&#013;may not use instinct for free", "recovery": "Health Ob 3"},
+        "injured": {"value": false, "display_name": "Injured", "hover_text": "-1D to skills, Nature, Will, and Health (but not recovery)", "recovery": "Health Ob 4"},
+        "sick": {"value": false, "display_name": "Sick", "hover_text": "-1D to skills, Nature, Will, and Health (but not recovery);&#013;cannot practice, learn, or advance", "recovery": "Will Ob 3"},
+        "dead": {"value": false, "display_name": "Dead", "hover_text": "May not test, help, or use wises", "recovery": ""}
       },
       "abilities": {
-        "will": {
-          "rating": 1,
-          "passes": 0,
-          "fails": 0
+        "raw_abilities": {
+          "will": {
+            "rating": 1,
+            "passes": 0,
+            "fails": 0,
+            "name": "Will"
+          },
+          "health": {
+            "rating": 1,
+            "passes": 0,
+            "fails": 0,
+            "name": "Health"
+          },
+          "nature": {
+            "rating": 1,
+            "max": 1,
+            "passes": 0,
+            "fails": 0,
+            "name": "Nature"
+          }
         },
-        "health": {
-          "rating": 1,
-          "passes": 0,
-          "fails": 0
-        },
-        "nature": {
-          "rating": 1,
-          "max": 1,
-          "passes": 0,
-          "fails": 0
-        },
-        "resources": {
-          "rating": 1,
-          "passes": 0,
-          "fails": 0
-        },
-        "circles": {
-          "rating": 1,
-          "passes": 0,
-          "fails": 0
+        "town_abilities": {
+          "resources": {
+            "rating": 1,
+            "passes": 0,
+            "fails": 0,
+            "name": "Resources"
+          },
+          "circles": {
+            "rating": 1,
+            "passes": 0,
+            "fails": 0,
+            "name": "Circles"
+          }
         }
       },
       "prescedence": 0,
@@ -124,10 +133,10 @@
         "theologian": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"}
       },
       "wises": {
-        "wise_0": {"pass": false, "fail": false, "fate": false, "persona": false},
-        "wise_1": {"pass": false, "fail": false, "fate": false, "persona": false},
-        "wise_2": {"pass": false, "fail": false, "fate": false, "persona": false},
-        "wise_3": {"pass": false, "fail": false, "fate": false, "persona": false}
+        "wise_0": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_1": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_2": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false},
+        "wise_3": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false}
       },
       "inventory": {
 
