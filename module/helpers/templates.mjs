@@ -11,6 +11,7 @@
     "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs",
     "systems/ivys_torchbearer/templates/actor/parts/actor-spells.hbs",
     "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs",
+    "systems/ivys_torchbearer/templates/rolls/roll-build-dialog.hbs",
     
     // "systems/ivys_torchbearer/templates/actor/parts/actor-features.html",
     // "systems/ivys_torchbearer/templates/actor/parts/actor-items.html",

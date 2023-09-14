@@ -214,18 +214,73 @@
         <div class="grid grid-2col">
           {{!-- Raw Abilities --}}
           <div>
+            <div class="flexrow">
+              <span>Raw Ability</span>
+              <span>Rating</span>
+              <span>Passes</span>
+              <span>Fails</span>
+            </div>
             {{#each system.abilities.raw_abilities as |value key|}}
               <div class="flexrow">
-                <span class="rollable" data-roll="test" data-label="{{value.name}}">{{value.name}}</span>
+                <span class="rollable" data-roll="{{key}}" data-label="{{value.name}}">{{value.name}}</span>
+                {{#if (eq key "nature")}}
+                  <div class="grid grid-3col">
+                    <input type="number" name="system.abilities.raw_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+                    <span> / </span>
+                    <input type="number" name="system.abilities.raw_abilities.{{key}}.max" value="{{value.max}}" data-dtype="Number"/>
+                  </div>
+                {{else}}
+                  <input type="number" name="system.abilities.raw_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+                {{/if}}
+                <input type="number" name="system.abilities.raw_abilities.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
+                <input type="number" name="system.abilities.raw_abilities.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
               </div>
             {{/each}}
           </div>
 
           {{!-- Town Abilities --}}
           <div>
-
+            <div class="flexrow">
+              <span>Town Ability</span>
+              <span>Rating</span>
+              <span>Passes</span>
+              <span>Fails</span>
+            </div>
+            {{#each system.abilities.town_abilities as |value key|}}
+              <div class="flexrow">
+                <span class="rollable" data-roll="{{key}}" data-label="{{value.name}}">{{value.name}}</span>
+                <input type="number" name="system.abilities.town_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+                <input type="number" name="system.abilities.town_abilities.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
+                <input type="number" name="system.abilities.town_abilities.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
+              </div>
+            {{/each}}
           </div>
         </div>
+        <div class="flexrow">
+          <input type="number" name="system.prescedence" value="{{system.prescedence}}" data-dtype="Number"/>
+          <input type="number" name="system.might" value="{{system.might}}" data-dtype="Number"/>
+        </div>
+
+        </div>
+        
+      {{!-- Skills --}}
+      <h2>Skills</h2>
+      <div>
+        <div class="flexrow">
+          <span>Skill</span>
+          <span>Rating</span>
+          <span>Passes</span>
+          <span>Fails</span>
+        </div>
+        {{#each system.skills as |value key|}}
+          <div class="flexrow">
+            <span class="rollable" data-roll="{{key}}" data-label="{{capitalize key}}">{{capitalize key}}</span>
+            <input type="number" name="system.skills.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+            <input type="number" name="system.skills.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
+            <input type="number" name="system.skills.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
+          </div>
+        {{/each}}
+      </div>
       </div>
     </div>
 

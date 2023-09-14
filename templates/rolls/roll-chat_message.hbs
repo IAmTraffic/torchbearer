@@ -1,0 +1,21 @@
+<div style="font-family: Souvenir" class="dice-result">
+    <div class="dice-tooltip expanded" style="display: block;">
+        <h2>{{label}}</h2>
+        <b>Ob: {{ob}}</b>
+        <ol class="dice-rolls">
+            {{#each dice as |value key|}}
+                <li class="roll die d6{{#if (eq value.count 0)}} failure{{else}}{{#if (eq value.result 6)}} success{{/if}}{{/if}}">{{value.result}}</li>
+            {{/each}}
+            {{#if (gt miscSuccesses 0)}}
+                <li><b> +{{miscSuccesses}}S</b></li>
+            {{/if}}
+        </ol>
+        <b>{{successes}} successes</b>
+        <br>
+        {{#if succeeded}}
+            <b>Success!</b>
+        {{else}}
+            <b>Failure</b>
+        {{/if}}
+    </div>
+</div>

@@ -201,7 +201,7 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -217,15 +217,100 @@ export class TorchbearerActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      console.log(dataset)
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-      return roll;
+      dataset.baseDice = 0;
+
+      if(this.actor.system.abilities.raw_abilities[dataset.roll]){
+        dataset.baseDice = this.actor.system.abilities.raw_abilities[dataset.roll].rating;
+      }else if(this.actor.system.abilities.town_abilities[dataset.roll]){
+        dataset.baseDice = this.actor.system.abilities.town_abilities[dataset.roll].rating;
+      }else if(this.actor.system.skills[dataset.roll]){
+        dataset.baseDice = this.actor.system.skills[dataset.roll].rating;
+      }
+
+
+      const dialog_content = await renderTemplate("systems/ivys_torchbearer/templates/rolls/roll-build-dialog.hbs", dataset);
+
+      new Dialog({
+        title: "Test Title",
+        content: dialog_content,
+        buttons: {
+          button1: {
+            label: "Roll",
+            callback: (html) => roll_dialog_callback(html, dataset, this.actor),
+            icon: `<i class="fas fa-check"></i>`
+          },
+          button2: {
+            label: "Cancel",
+            callback: () => {},
+            icon: `<i class="fas fa-times"></i>`
+          }
+        }
+      }).render(true);
+
+      async function roll_dialog_callback(html, roll_dialog_data, actor){
+        const ob = parseInt(html.find("input#ob").val());
+        const miscDice = parseInt(html.find("input#miscDice").val());
+        const miscSuccesses = parseInt(html.find("input#miscSuccesses").val());
+        const baseDice = parseInt(roll_dialog_data.baseDice);
+        const totalDice = baseDice + miscDice;
+
+        // let label = dataset.label ? `[ability] ${dataset.label}` : '';
+        let label = "";
+        if(roll_dialog_data.label){
+          label = label.concat(`Rolling ${roll_dialog_data.label}: ${totalDice}D`);
+        }
+        if(miscSuccesses){
+          label.concat(` +${miscSuccesses}S`);
+        }
+
+        let formula = `{${totalDice}d6cs>3}>=ob`;
+
+        let roll = new Roll(formula, actor.getRollData());
+
+        await roll.evaluate();
+
+        let rolled_successes = 0;
+        let dice = [];
+
+        roll.dice[0].results.forEach((die) => {
+          rolled_successes += die.count;
+          dice.push(die);
+        });
+
+        let succeeded = false;
+        let successes = rolled_successes;
+        if(rolled_successes >= ob){
+          succeeded = true;
+          successes += miscSuccesses;
+        }
+
+        let message_data = {
+          ob: ob,
+          dice: totalDice,
+          additional_successes: miscSuccesses,
+          label: label,
+          formula: formula,
+          rolled_successes: rolled_successes,
+          miscSuccesses: miscSuccesses,
+          succeeded: succeeded,
+          successes: successes,
+          dice: dice
+        }
+        const chat_message_content = await renderTemplate("systems/ivys_torchbearer/templates/rolls/roll-chat_message.hbs", message_data);
+        ChatMessage.create({
+          speaker: ChatMessage.getSpeaker({actor: actor}),
+          content: chat_message_content,
+          type: CONST.CHAT_MESSAGE_TYPES.ROLL
+        });
+
+        // roll.toMessage({
+        //   speaker: ChatMessage.getSpeaker({ actor: actor }),
+        //   flavor: label,
+        //   rollMode: game.settings.get('core', 'rollMode'),
+        // });
+        return roll;
+      }
+
     }
   }
 
