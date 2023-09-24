@@ -3,3 +3,4 @@ Character sheet
     - maybe skills as items? would need to rework some things
  - also make it possible to add allies_and_enemies
     - maybe they are items too? idk
+ - also make it possible to add new items (to misc list, etc.)

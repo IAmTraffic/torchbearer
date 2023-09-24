@@ -286,8 +286,37 @@
 
 
     {{!-- Inventory Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}}
+    <div class="tab item" data-group="primary" data-tab="inventory">
+
+      <div class="grid grid-2col">
+        {{!-- Body --}}
+        <div class="grid grid-2col">
+          <div>
+            <h2>Head</h2>
+            {{log system.inventory.body.head}}
+            {{log system.inventory.body.head.[0]}}
+            <input type="text" name="system.inventory.body.head.[0].item" value="{{system.inventory.body.head.[0].item}}" placeholder="{{system.inventory.body.head.[0].label}}" data-dtype="String"/>
+            <h2>Neck</h2>
+            <input type="text" name="system.inventory.body.neck.item" value="{{system.inventory.body.neck.item}}" placeholder="{{system.inventory.body.neck.type}}" data-dtype="String"/>
+            <h2>Hands</h2>
+            <h2>Feet</h2>
+          </div>
+          <div>
+            <h2>Torso</h2>
+            <h2>Belt</h2>
+            <h2>Pocket</h2>
+          </div>
+        </div>
+        
+        {{!-- Containers --}}
+        <div class="flexrow">
+          
+        </div>
+      </div>
+
+      {{!-- Cache --}}
+      
+       {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}} --}}
     </div>
 
     {{!-- Spells Tab --}}

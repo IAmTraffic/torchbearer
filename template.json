@@ -139,7 +139,176 @@
         "wise_3": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false}
       },
       "inventory": {
-
+        "body": {
+          "head": {
+            "0": {
+              "label": "Worn",
+              "item": ""
+            }
+          },
+          "neck": {
+            "0": {
+              "label": "Worn",
+              "item": ""
+            }
+          },
+          "hands": {
+            "0": {
+              "label": "Worn",
+              "item": ""
+            },
+            "1": {
+              "label": "Worn",
+              "item": ""
+            },
+            "2": {
+              "label": "Carried",
+              "item": ""
+            },
+            "3": {
+              "label": "Carried",
+              "item": ""
+            }
+          },
+          "feet": {
+            "0": {
+              "label": "Worn",
+              "item": ""
+            }
+          },
+          "torso": {
+            "0": {
+              "label": "Worn",
+              "item": ""
+            },
+            "1": {
+              "label": "Worn",
+              "item": ""
+            },
+            "2": {
+              "label": "Worn",
+              "item": ""
+            }
+          },
+          "belt": {
+            "0": {
+              "label": "",
+              "item": ""
+            },
+            "1": {
+              "label": "",
+              "item": ""
+            },
+            "2": {
+              "label": "",
+              "item": ""
+            }
+          },
+          "pocket": {
+            "0": {
+              "label": "Trinkets",
+              "item": ""
+            }
+          }
+        },
+        "small_sacks": {
+          "sack_0": {
+            "0": {
+              "label": "",
+              "item": ""
+            },
+            "1": {
+              "label": "",
+              "item": ""
+            }
+          },
+          "sack_1" {
+            "0": {
+              "label": "",
+              "item": ""
+            },
+            "1": {
+              "label": "",
+              "item": ""
+            }
+          }
+        },
+        "large_sack": {
+          "0": {
+            "label": "",
+            "item": ""
+          },
+          "1": {
+            "label": "",
+            "item": ""
+          },
+          "2": {
+            "label": "",
+            "item": ""
+          },
+          "3": {
+            "label": "",
+            "item": ""
+          },
+          "4": {
+            "label": "",
+            "item": ""
+          },
+          "5": {
+            "label": "",
+            "item": ""
+          }
+        },
+        "cache": {
+          "0": {
+            "label": "",
+            "item": ""
+          },
+          "1": {
+            "label": "",
+            "item": ""
+          },
+          "2": {
+            "label": "",
+            "item": ""
+          },
+          "3": {
+            "label": "",
+            "item": ""
+          },
+          "4": {
+            "label": "",
+            "item": ""
+          },
+          "5": {
+            "label": "",
+            "item": ""
+          },
+          "6": {
+            "label": "",
+            "item": ""
+          },
+          "7": {
+            "label": "",
+            "item": ""
+          },
+          "8": {
+            "label": "",
+            "item": ""
+          },
+          "9": {
+            "label": "",
+            "item": ""
+          },
+          "10": {
+            "label": "",
+            "item": ""
+          },
+          "11": {
+            "label": "",
+            "item": ""
+          }
+        }
       },
       "magic": {
 
