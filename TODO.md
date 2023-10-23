@@ -1,7 +1,7 @@
 # Current List
- - Make inventory slots
  - Make spell entries
  - Make monster character sheets
+ - UI overhaul
 
 # Future list
 Character sheet

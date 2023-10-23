@@ -421,7 +421,16 @@
     },
     "spell": {
       "templates": ["base"],
-      "spellLevel": 1
+      "effect": "",
+      "focus": "",
+      "materials": "",
+      "to_scribe": "",
+      "to_learn": "",
+      "casting": "",
+      "casting_time": "",
+      "duration": "",
+      "factors": "",
+      "misc": ""
     }
   }
 }
