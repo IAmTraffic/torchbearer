@@ -7,26 +7,70 @@
   </header>
 
   {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
+  {{!-- <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="attributes">Attributes</a>
-  </nav>
+  </nav> --}}
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Description Tab --}}
-    <div class="tab" data-group="primary" data-tab="description">
-      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
-    </div>
+    <textarea placeholder="A magic spell does something..." name="system.description" data-dtype="String">{{system.description}}</textarea>
+    <h2>{{item.name}} Effect</h2>
+    <textarea placeholder="... and that something has an effect" name="system.effect" data-dtype="String">{{system.effect}}</textarea>
+   
+    <table>
+      <tr>
+        <td>
+          <span><b>Focus:</b> <input type="text" name="system.focus" value="{{system.focus}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>Materials:</b> <input type="text" name="system.materials" value="{{system.materials}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span><b>To Scribe:</b> <input type="text" name="system.to_scribe" value="{{system.to_scribe}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>To Learn:</b> <input type="text" name="system.to_learn" value="{{system.to_learn}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span><b>Casting:</b> <input type="text" name="system.casting" value="{{system.casting}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>Casting Time:</b> <input type="text" name="system.casting_time" value="{{system.casting_time}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span><b>Duration:</b> <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String"/></span>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+    
+    <h2>{{item.name}} Factors</h2>
+    <textarea placeholder="... and it requires some effort" name="system.factors" data-dtype="String">{{system.factors}}</textarea>
 
-    {{!-- Attributes Tab --}}
-    <div class="tab attributes" data-group="primary" data-tab="attributes">
+    <h2>Misc. Notes</h2>
+    <textarea name="system.misc" data-dtype="String">{{system.misc}}</textarea>
+
+    {{!-- Description Tab
+    <div class="tab" data-group="primary" data-tab="description"> --}}
+      {{!-- {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}} --}}
+    {{!-- </div> --}}
+
+    {{!-- Attributes Tab
+    <div class="tab attributes" data-group="primary" data-tab="attributes"> --}}
       {{!-- As you add new fields, add them in here! --}}
-      <div class="resource">
+      {{!-- <div class="resource">
         <label class="resource-label">Spell Level</label>
-        <input type="text" name="system.spellLevel" value="{{system.spellLevel}}" data-dtype="Number"/>
-      </div>
-    </div>
+        <input type="text" name="system.effect" value="{{system.effect}}" data-dtype="String"/>
+      </div> --}}
+    {{!-- </div> --}}
   </section>
 </form>

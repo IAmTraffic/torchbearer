@@ -1,5 +1,5 @@
 # Current List
- - Make spell entries
+ - Level benefits section?
  - Make monster character sheets
  - UI overhaul
 

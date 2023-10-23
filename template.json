@@ -404,13 +404,13 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["Item", "feature", "Spell"],
     "templates": {
       "base": {
         "description": ""
       }
     },
-    "item": {
+    "Item": {
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,
@@ -419,7 +419,7 @@
     "feature": {
       "templates": ["base"]
     },
-    "spell": {
+    "Spell": {
       "templates": ["base"],
       "effect": "",
       "focus": "",
