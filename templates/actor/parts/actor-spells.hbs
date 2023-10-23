@@ -9,7 +9,6 @@
     </li>
     {{#each actor.items as |item id|}}
     {{!-- {{#each spells as |item id|}} --}}
-      {{log item}}
       {{#if (eq item.type "Spell")}}
         <li class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-name flexrow">

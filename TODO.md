@@ -12,3 +12,4 @@ Character sheet
  - rework items to be Foundry Items, not text boxes
  - make universal grind
  - make universal conflict page
+ - make level benefits have programmatical effects

@@ -404,7 +404,7 @@
     }
   },
   "Item": {
-    "types": ["Item", "feature", "Spell"],
+    "types": ["Item", "Level Feature", "Spell"],
     "templates": {
       "base": {
         "description": ""
@@ -416,7 +416,7 @@
       "weight": 0,
       "formula": "d20 + @str.mod + ceil(@lvl / 2)"
     },
-    "feature": {
+    "Level Feature": {
       "templates": ["base"]
     },
     "Spell": {

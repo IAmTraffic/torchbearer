@@ -20,9 +20,18 @@ export class TorchbearerItemSheet extends ItemSheet {
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.html`;
 
+    switch (this.item.type){
+      case "Spell":
+        return `${path}/item-spell-sheet.hbs`;
+      case "Level Feature":
+        return `${path}/item-feature-sheet.hbs`;
+      default:
+        return `${path}/item-sheet.hbs`;
+    }
+
     // Alternatively, you could use the following return statement to do a
     // unique item sheet by type, like `weapon-sheet.html`.
-    return `${path}/item-${this.item.type}-sheet.hbs`;
+    // return `${path}/item-${this.item.type}-sheet.hbs`;
     // return `${path}/item-${this.item.type}-sheet.html`;
   }
 
