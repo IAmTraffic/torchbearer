@@ -396,7 +396,7 @@
       }
     },
     "Monster": {
-      "cr": 0
+      
     },
     "Grind": {
       "turn": 0,
@@ -404,10 +404,24 @@
     }
   },
   "Item": {
-    "types": ["Item", "Level Feature", "Spell"],
+    "types": ["Item", "Level Feature", "Spell", "Weapon"],
     "templates": {
       "base": {
         "description": ""
+      },
+      "inventory_item": {
+        "a": {
+          "slot_type": "",
+          "size": 1
+        },
+        "b": {
+          "slot_type": "",
+          "size": 1
+        },
+        "c": {
+          "slot_type": "",
+          "size": 1
+        }
       }
     },
     "Item": {
@@ -431,6 +445,15 @@
       "duration": "",
       "factors": "",
       "misc": ""
+    },
+    "Weapon": {
+      "templates": ["base", "inventory_item"],
+      "conflicts": "Kill, Capture, and Drive Off",
+      "A": "",
+      "D": "",
+      "F": "",
+      "M": "",
+      "Special": ""
     }
   }
 }

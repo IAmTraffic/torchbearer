@@ -10,9 +10,26 @@
       from 1 to 12 and will create that number of columns.  --}}
       <div class="resources grid grid-3col">
 
-        {{!-- "flex-group-center" is also defined in the _grid.scss file
-        and it will add a small amount of padding, a border, and will
-        center all of its child elements content and text. --}}
+        {{!-- 
+        
+        Resources: Nature, Might, Prescedence
+        Nature Descriptors        Type
+        Instinct
+        Special Rules:
+          - 
+          - 
+          - 
+
+        Hit Points
+        High  Med   Low
+        Other Conflict HP within nature:
+        Outside Nature:
+        
+        Armor
+        Weapon List
+
+         --}}
+
         <div class="resource flex-group-center">
           <label for="system.health.value" class="resource-label">Health</label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -49,7 +66,7 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
+    {{!-- <a class="item" data-tab="effects">Effects</a> --}}
   </nav>
 
   {{!-- Sheet Body --}}
@@ -66,10 +83,10 @@
        {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}}
     </div>
 
-    {{!-- Active Effects Tab --}}
+    {{!-- Active Effects Tab
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
       {{> "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs"}}
-    </div>
+    </div> --}}
 
   </section>
 </form>

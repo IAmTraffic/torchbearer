@@ -86,47 +86,25 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareItems(context) {
-    return;
-    //Old
-    // Initialize containers.
-    const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
+    let spells = [];
+    let features = [];
+    let weapons = [];
 
-    // Iterate through items, allocating to containers
-    for (let i of context.items) {
+    for(let i of context.items){
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+      
+      if(i.type === "Spell"){
+        spells.push(i)
+      }else if(i.type === "Level Feature"){
+        features.push(i)
+      }else if(i.type === "Weapon"){
+        weapons.push(i)
       }
     }
 
-    // Assign and return
-    context.gear = gear;
-    context.features = features;
-    context.spells = spells;
+    context.spells = spells
+    context.features = features
+    context.weapons = weapons
   }
 
   /* -------------------------------------------- */
