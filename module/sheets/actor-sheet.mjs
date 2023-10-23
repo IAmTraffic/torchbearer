@@ -42,7 +42,8 @@ export class TorchbearerActorSheet extends ActorSheet {
     context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'character') {
+    if (actorData.type == 'Character') {
+    // if (actorData.type == 'character') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
@@ -69,6 +70,8 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+    return;
+    //Old
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.TORCHBEARER.abilities[k]) ?? k;
@@ -83,6 +86,8 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareItems(context) {
+    return;
+    //Old
     // Initialize containers.
     const gear = [];
     const features = [];

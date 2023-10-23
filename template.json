@@ -138,173 +138,249 @@
         "wise_2": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false},
         "wise_3": {"name": "", "pass": false, "fail": false, "fate": false, "persona": false}
       },
-      "inventory": {
+      "text_inventory": {
         "body": {
           "head": {
-            "0": {
+            "a": {
               "label": "Worn",
               "item": ""
             }
           },
           "neck": {
-            "0": {
+            "a": {
               "label": "Worn",
               "item": ""
             }
           },
           "hands": {
-            "0": {
+            "a": {
               "label": "Worn",
               "item": ""
             },
-            "1": {
+            "b": {
               "label": "Worn",
               "item": ""
             },
-            "2": {
+            "c": {
               "label": "Carried",
               "item": ""
             },
-            "3": {
+            "d":  {
               "label": "Carried",
               "item": ""
             }
           },
           "feet": {
-            "0": {
+            "a": {
               "label": "Worn",
               "item": ""
             }
           },
           "torso": {
-            "0": {
+            "a": {
               "label": "Worn",
               "item": ""
             },
-            "1": {
+            "b": {
               "label": "Worn",
               "item": ""
             },
-            "2": {
+            "c": {
               "label": "Worn",
               "item": ""
             }
           },
           "belt": {
-            "0": {
+            "a": {
               "label": "",
               "item": ""
             },
-            "1": {
+            "b": {
               "label": "",
               "item": ""
             },
-            "2": {
+            "c": {
               "label": "",
               "item": ""
             }
           },
           "pocket": {
-            "0": {
+            "a": {
               "label": "Trinkets",
               "item": ""
             }
           }
         },
+        "satchel_backpack": {
+          "a": {
+            "label": "",
+            "item": ""
+          },
+          "b": {
+            "label": "",
+            "item": ""
+          },
+          "c": {
+            "label": "",
+            "item": ""
+          },
+          "d": {
+            "label": "",
+            "item": ""
+          },
+          "e": {
+            "label": "",
+            "item": ""
+          },
+          "f": {
+            "label": "",
+            "item": ""
+          }
+        },
         "small_sacks": {
-          "sack_0": {
-            "0": {
+          "a": {
+            "a": {
               "label": "",
               "item": ""
             },
-            "1": {
+            "b": {
               "label": "",
               "item": ""
             }
           },
-          "sack_1" {
-            "0": {
+          "b": {
+            "a": {
               "label": "",
               "item": ""
             },
-            "1": {
+            "b": {
               "label": "",
               "item": ""
             }
           }
         },
         "large_sack": {
-          "0": {
+          "a": {
             "label": "",
             "item": ""
           },
-          "1": {
+          "b": {
             "label": "",
             "item": ""
           },
-          "2": {
+          "c": {
             "label": "",
             "item": ""
           },
-          "3": {
+          "d": {
             "label": "",
             "item": ""
           },
-          "4": {
+          "e": {
             "label": "",
             "item": ""
           },
-          "5": {
+          "f": {
             "label": "",
             "item": ""
           }
         },
         "cache": {
-          "0": {
+          "a": {
             "label": "",
             "item": ""
           },
-          "1": {
+          "b": {
             "label": "",
             "item": ""
           },
-          "2": {
+          "c": {
             "label": "",
             "item": ""
           },
-          "3": {
+          "d": {
             "label": "",
             "item": ""
           },
-          "4": {
+          "e": {
             "label": "",
             "item": ""
           },
-          "5": {
+          "f": {
             "label": "",
             "item": ""
           },
-          "6": {
+          "g": {
             "label": "",
             "item": ""
           },
-          "7": {
+          "h": {
             "label": "",
             "item": ""
           },
-          "8": {
+          "i": {
             "label": "",
             "item": ""
           },
-          "9": {
+          "j": {
             "label": "",
             "item": ""
           },
-          "10": {
+          "k": {
             "label": "",
             "item": ""
           },
-          "11": {
+          "l": {
+            "label": "",
+            "item": ""
+          }
+        },
+        "misc": {
+          "a": {
+            "label": "",
+            "item": ""
+          },
+          "b": {
+            "label": "",
+            "item": ""
+          },
+          "c": {
+            "label": "",
+            "item": ""
+          },
+          "d": {
+            "label": "",
+            "item": ""
+          },
+          "e": {
+            "label": "",
+            "item": ""
+          },
+          "f": {
+            "label": "",
+            "item": ""
+          },
+          "g": {
+            "label": "",
+            "item": ""
+          },
+          "h": {
+            "label": "",
+            "item": ""
+          },
+          "i": {
+            "label": "",
+            "item": ""
+          },
+          "j": {
+            "label": "",
+            "item": ""
+          },
+          "k": {
+            "label": "",
+            "item": ""
+          },
+          "l": {
             "label": "",
             "item": ""
           }
