@@ -386,9 +386,7 @@
           }
         }
       },
-      "magic": {
-
-      },
+      "using_text_inventory": false,
       "bio": {
         "allies_and_enemies": [],
         "biography": "",
@@ -396,7 +394,31 @@
       }
     },
     "Monster": {
-      
+      "nature": 1,
+      "might": 1,
+      "prescedence": 1,
+      "nature_descriptors": "",
+      "type": "",
+      "instinct": "",
+      "special_rules": "",
+      "hp":{
+        "high": {
+          "max": 1,
+          "current": 1,
+          "descriptor": ""
+        },
+        "med": {
+          "max": 1,
+          "current": 1,
+          "descriptor": ""
+        },
+        "low": {
+          "max": 1,
+          "current": 1,
+          "descriptor": ""
+        }
+      },
+      "armor": ""
     },
     "Grind": {
       "turn": 0,
@@ -404,23 +426,25 @@
     }
   },
   "Item": {
-    "types": ["Item", "Level Feature", "Spell", "Weapon"],
+    "types": ["Item", "Level Feature", "Spell", "Weapon", "Skill", "NPC"],
     "templates": {
       "base": {
         "description": ""
       },
       "inventory_item": {
-        "a": {
-          "slot_type": "",
-          "size": 1
-        },
-        "b": {
-          "slot_type": "",
-          "size": 1
-        },
-        "c": {
-          "slot_type": "",
-          "size": 1
+        "inventory_slot_options": {
+          "a": {
+            "slot_type": "",
+            "size": 1
+          },
+          "b": {
+            "slot_type": "",
+            "size": 1
+          },
+          "c": {
+            "slot_type": "",
+            "size": 1
+          }
         }
       }
     },
@@ -454,6 +478,9 @@
       "F": "",
       "M": "",
       "Special": ""
+    },
+    "NPC": {
+      "relationship": ""
     }
   }
 }

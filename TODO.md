@@ -1,14 +1,15 @@
 # Current List
- - rework items to be Foundry Items, not text boxes
- - Make monster character sheets
+ - make NPC items function with PC Allies and Enemies
+ - make it possible to add new skills
+    - maybe skills as items? would need to rework some things
  - UI overhaul
 
 # Future list
 Character sheet
- - make it possible to add new skills
-    - maybe skills as items? would need to rework some things
- - also make it possible to add allies_and_enemies
-    - maybe they are items too? idk
- - make universal grind
- - make universal conflict page
+ - rework items to be Foundry Items, not text boxes
  - make level benefits have programmatical effects
+ - replace textarea with TinyMCE editors
+
+ 
+- make universal grind
+- make universal conflict page

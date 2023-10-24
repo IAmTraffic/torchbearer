@@ -47,7 +47,11 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="core">It Revolves on This</a>
     <a class="item" data-tab="skills_abilities">Skills & Abilities</a>
-    <a class="item" data-tab="inventory">Inventory</a>
+    {{#if system.using_text_inventory}}
+      <a class="item" data-tab="text_inventory">Inventory</a>
+    {{else}}
+      <a class="item" data-tab="inventory">Inventory</a>
+    {{/if}}
     <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="bio">About Me</a>
   </nav>
@@ -285,8 +289,8 @@
     </div>
 
 
-    {{!-- Inventory Tab --}}
-    <div class="tab item" data-group="primary" data-tab="inventory">
+    {{!-- Text Inventory Tab --}}
+    <div class="tab item" data-group="primary" data-tab="text_inventory">
       
       {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}} --}}
 
@@ -385,8 +389,107 @@
             </div>
           </div>
         </div>
+    </div>
+
+    
+    {{!-- Inventory Tab --}}
+    <div class="tab item" data-group="primary" data-tab="inventory">
+      for real!
+      {{!-- Body --}}
+      <h1 style="text-align:center">Your Person</h1>
+      <div class="grid grid-2col">
+        <div>
+          <h2>Head</h2>
+          {{#each system.text_inventory.body.head as |value key|}}
+            <input type="text" name="system.text_inventory.body.head.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          <h2>Neck</h2>
+          {{#each system.text_inventory.body.neck as |value key|}}
+            <input type="text" name="system.text_inventory.body.neck.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- <input type="text" name="system.text_inventory.body.neck.a.item" value="{{system.text_inventory.body.neck.a.item}}" placeholder="{{system.text_inventory.body.neck.a.label}}" data-dtype="String"/> --}}
+          <h2>Hands</h2>
+          {{#each system.text_inventory.body.hands as |value key|}}
+            <input type="text" name="system.text_inventory.body.hands.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 2 worn, 2 carried --}}
+          <h2>Feet</h2>
+          {{#each system.text_inventory.body.feet as |value key|}}
+            <input type="text" name="system.text_inventory.body.feet.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 1 worn --}}
+        </div>
+        <div>
+          <h2>Torso</h2>
+          {{#each system.text_inventory.body.torso as |value key|}}
+            <input type="text" name="system.text_inventory.body.torso.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 3 worn --}}
+          <h2>Belt</h2>
+          {{#each system.text_inventory.body.belt as |value key|}}
+            <input type="text" name="system.text_inventory.body.belt.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 3 belt --}}
+          <h2>Pocket</h2>
+          {{#each system.text_inventory.body.pocket as |value key|}}
+            <input type="text" name="system.text_inventory.body.pocket.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 1 trinkets --}}
+        </div>
+      </div>
       
-      
+      {{!-- Containers --}}
+      <h1 style="text-align:center">Containers</h1>
+      <div class="grid grid-2col">
+        <div>
+          <h2>Satchel / Backpack</h2>
+          {{#each system.text_inventory.satchel_backpack as |value key|}}
+            <input type="text" name="system.text_inventory.satchel_backpack.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+            {{#if (eq key "c")}}
+            <span style="text-align:center">(Use the following slots only if Backpack)</span>
+            {{/if}}
+          {{/each}}
+          {{!-- 3/6 pack --}}
+        </div>
+        <div>
+          <h2>Small Sack</h2>
+          {{#each system.text_inventory.small_sacks.a as |value key|}}
+            <input type="text" name="system.text_inventory.small_sacks.a.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 2 --}}
+          <h2>Small Sack</h2>
+          {{#each system.text_inventory.small_sacks.b as |value key|}}
+            <input type="text" name="system.text_inventory.small_sacks.b.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 2 --}}
+          <h2>Large Sack</h2>
+          {{#each system.text_inventory.large_sack as |value key|}}
+            <input type="text" name="system.text_inventory.large_sack.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+          {{/each}}
+          {{!-- 6 --}}
+        </div>
+      </div>
+
+      {{!-- Cache and Misc --}}
+      <h1 style="text-align:center">Cache & Misc.</h1>
+      <div class="flexrow">
+          <div class="grid grid-2col">
+            <div>
+              <h2>Cache</h2>
+              {{#each system.text_inventory.cache as |value key|}}
+                <input type="text" name="system.text_inventory.cache.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+              {{/each}}
+              {{!-- 12 --}}
+            </div>
+            <div>
+              <h2>Misc.</h2>
+              {{#each system.text_inventory.misc as |value key|}}
+                <input type="text" name="system.text_inventory.misc.{{key}}.item" value="{{value.item}}" placeholder="{{value.label}}" data-dtype="String"/>
+              {{/each}}
+              {{!-- 12 --}}
+            </div>
+          </div>
+        </div>
     </div>
 
     {{!-- Spells Tab --}}

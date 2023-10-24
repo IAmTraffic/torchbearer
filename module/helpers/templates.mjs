@@ -12,6 +12,9 @@
     "systems/ivys_torchbearer/templates/actor/parts/actor-spells.hbs",
     // "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs",
     "systems/ivys_torchbearer/templates/rolls/roll-build-dialog.hbs",
+
+    //Item partials
+    "systems/ivys_torchbearer/templates/item/parts/item-inventory.hbs",
     
     // "systems/ivys_torchbearer/templates/actor/parts/actor-features.html",
     // "systems/ivys_torchbearer/templates/actor/parts/actor-items.html",

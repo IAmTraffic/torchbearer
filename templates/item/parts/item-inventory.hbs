@@ -1,3 +1,46 @@
 <div>
-  Im an inventory item
+  <table>
+    <tr>
+      <th>Inventory Slot Type</th>
+      <th>Item Size in Slot</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="system.inventory_slot_options.a.slot_type" value="{{system.inventory_slot_options.a.slot_type}}" data-dtype="String"/>
+      </td>
+      <td>
+        <input type="number" name="system.inventory_slot_options.a.size" value="{{system.inventory_slot_options.a.size}}" data-dtype="Number"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="system.inventory_slot_options.b.slot_type" value="{{system.inventory_slot_options.b.slot_type}}" data-dtype="String"/>
+      </td>
+      <td>
+        <input type="number" name="system.inventory_slot_options.b.size" value="{{system.inventory_slot_options.b.size}}" data-dtype="Number"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="system.inventory_slot_options.c.slot_type" value="{{system.inventory_slot_options.c.slot_type}}" data-dtype="String"/>
+      </td>
+      <td>
+        <input type="number" name="system.inventory_slot_options.c.size" value="{{system.inventory_slot_options.c.size}}" data-dtype="Number"/>
+      </td>
+    </tr>
+  </table>
 </div>
+
+
+{{!-- "a": {
+  "slot_type": "",
+  "size": 1
+},
+"b": {
+  "slot_type": "",
+  "size": 1
+},
+"c": {
+  "slot_type": "",
+  "size": 1
+} --}}

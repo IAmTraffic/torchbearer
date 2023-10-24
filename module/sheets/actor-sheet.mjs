@@ -49,7 +49,7 @@ export class TorchbearerActorSheet extends ActorSheet {
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    if (actorData.type == 'Monster') {
       this._prepareItems(context);
     }
 
@@ -296,5 +296,82 @@ export class TorchbearerActorSheet extends ActorSheet {
 
     }
   }
+
+  /*TODO: Make items items*/
+  // /** @override */
+  // async _onDrop(event) {
+  //   let oldData = TextEditor.getDragEventData(event);
+  //   let oldId = null;
+  //   if(oldData.data){
+  //     oldId = oldData.data._id;
+  //   }
+
+  //   let item = await super._onDrop(event);    //This is an essential step (the below code doesn't seem to be a proper substitute), but it creates the new item instead of updating it?? idk
+    
+  //   let newId = Array.isArray(item) ? item[0]._id : item._id;
+
+  //   // super._onDrop sometimes returns an array (e.g. drop from compendium) and sometimes not (e.g. move in inventory)
+  //   if (Array.isArray(item)) {
+  //     return item.map(async (i) => await this.handleDropItem(i, event, oldId));
+  //   } else {
+  //     return await this.handleDropItem(item, event, oldId);
+  //   }
+  // }
+
+  // async handleDropItem(item, event, oldId) {
+  //   // item.document means we got an ItemData rather than a TorchbearerBaseItem
+  //   const tbItem = item.document ? item.document : item;
+  //   if (tbItem instanceof TorchbearerItem) {
+  //     if (tbItem.data) {
+  //       await tbItem.syncEquipVariables();
+
+  //       let oldContainerId = tbItem.data.data.containerId;
+  //       let { containerType, containerId, slotsTaken } = this.closestCompatibleContainer(tbItem, event.target); //the data of where we are dropping?
+  //       if (!containerType) {
+  //         //No closest container specified, so pick one.
+  //         // First, we know it's not pack w/o a containerId, so if it is the item's gonna need
+  //         // updating.
+  //         if (tbItem.data.data.equip === "Pack") {
+  //           tbItem.data.data.equip = tbItem.data.data.equipOptions.option1.value;
+  //           tbItem.data.data.slots = tbItem.data.data.slotOptions.option1.value;
+  //           containerType = tbItem.data.data.equip;
+  //           containerId = null;
+  //           slotsTaken = tbItem.data.data.slots;
+  //         }
+  //         let newContainerType = this.pickAnotherContainerIfNecessaryDueToItemSize(tbItem);
+  //         if (newContainerType) {
+  //           slotsTaken = tbItem.slotsTaken(newContainerType);
+  //           containerType = newContainerType;
+  //         }
+  //       }
+
+  //       if (containerType) {
+  //         let update = { data: { equip: containerType, containerId: containerId, slots: slotsTaken } };
+  //         await tbItem.update(update);
+  //         await tbItem.onAfterEquipped({ containerType, containerId });
+  //         this.actor._onUpdate({ items: true }, { render: true });
+  //         if (oldContainerId) {
+  //           let oldContainer = this.actor.items.get(oldContainerId);
+  //           setTimeout(() => {
+  //             oldContainer.sheet.render(false);
+  //           }, 0);
+  //         }
+  //         if (containerId) {
+  //           let newContainer = this.actor.items.get(containerId);
+  //           setTimeout(() => {
+  //             newContainer.sheet.render(false);
+  //           }, 0);
+  //         }
+  //       }
+
+  //       //Delete the item from the old container
+  //       if(oldContainerId){
+  //         this.actor.removeItemFromInventory(oldId, oldContainerId);
+  //       }
+  //     }
+  //   }
+
+  //   return tbItem;
+  // }
 
 }
