@@ -455,7 +455,11 @@
       "formula": "d20 + @str.mod + ceil(@lvl / 2)"
     },
     "Level Feature": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "requirements": {
+        "fate": 0,
+        "persona": 0
+      }
     },
     "Spell": {
       "templates": ["base"],
@@ -481,6 +485,15 @@
     },
     "NPC": {
       "relationship": ""
+    },
+    "Skill": {
+      "templates": ["base"],
+      "beginners_luck": false,
+      "rating": 0,
+      "passes": 0,
+      "fails": 0,
+      "based_on": "",
+      "based_on_options": {"health": "Health", "will": "Will"}
     }
   }
 }

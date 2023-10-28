@@ -265,11 +265,45 @@
           <input type="number" name="system.might" value="{{system.might}}" data-dtype="Number"/>
         </div>
 
-        </div>
+      </div>
         
       {{!-- Skills --}}
       <h2>Skills</h2>
       <div>
+        <ol class="items-list">
+        <li class="item flexrow items-header">
+          <div class="item-name">Skill</div>
+          <div class="item-name">Rating</div>
+          <div class="item-name">Passes</div>
+          <div class="item-name">Fails</div>
+        </li>
+        {{#each skills as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name flexrow">
+              <div class="item-image">
+                <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+              </div>
+              <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
+            </div>
+            <div class="item">
+              {{item.system.rating}}
+            </div>
+            <div class="item">
+              {{item.system.passes}}
+            </div>
+            <div class="item">
+              {{item.system.fails}}
+            </div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+      </div>
+
+      {{!-- <div>
         <div class="flexrow">
           <span>Skill</span>
           <span>Rating</span>
@@ -284,8 +318,7 @@
             <input type="number" name="system.skills.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
           </div>
         {{/each}}
-      </div>
-      </div>
+      </div> --}}
     </div>
 
 
@@ -517,22 +550,41 @@
       {{!-- Allies and Enemies --}}
       <div>
         <h2>Allies and Enemies</h2>
-        <textarea placeholder="Allies and Enemies" name="system.bio.allies_and_enemies" data-dtype="String">{{system.bio.allies_and_enemies}}</textarea>
+        <ol class="items-list">
+        {{!-- <li class="item flexrow items-header">
+          <div class="item-name">Benefit</div>
+        </li> --}}
+        {{#each allies_and_enemies as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name flexrow">
+              <div class="item-image">
+                <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+              </div>
+              <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
+            </div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+        {{!-- <textarea placeholder="Allies and Enemies" name="system.bio.allies_and_enemies" data-dtype="String">{{system.bio.allies_and_enemies}}</textarea> --}}
       </div>
 
       <div>
         <h2>Level Benefits</h2>
         <ol class="items-list">
-           <li class="item flexrow items-header">
+          {{!-- <li class="item flexrow items-header">
             <div class="item-name">Benefit</div>
-          </li>
+          </li> --}}
           {{#each features as |item id|}}
             <li class="item flexrow" data-item-id="{{item._id}}">
               <div class="item-name flexrow">
                 <div class="item-image">
                   <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
                 </div>
-                <h4><a class="item-control item-edit">{{item.name}}</a></h4>
+                <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
               </div>
               <div class="item-controls">
                 <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>

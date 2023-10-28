@@ -89,6 +89,8 @@ export class TorchbearerActorSheet extends ActorSheet {
     let spells = [];
     let features = [];
     let weapons = [];
+    let allies_and_enemies = [];
+    let skills = [];
 
     for(let i of context.items){
       i.img = i.img || DEFAULT_TOKEN;
@@ -99,12 +101,18 @@ export class TorchbearerActorSheet extends ActorSheet {
         features.push(i)
       }else if(i.type === "Weapon"){
         weapons.push(i)
+      }else if(i.type === "NPC"){
+        allies_and_enemies.push(i)
+      }else if(i.type === "Skill"){
+        skills.push(i)
       }
     }
 
     context.spells = spells
     context.features = features
     context.weapons = weapons
+    context.allies_and_enemies = allies_and_enemies
+    context.skills = skills
   }
 
   /* -------------------------------------------- */

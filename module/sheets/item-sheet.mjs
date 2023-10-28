@@ -25,10 +25,12 @@ export class TorchbearerItemSheet extends ItemSheet {
         return `${path}/item-spell-sheet.hbs`;
       case "Level Feature":
         return `${path}/item-feature-sheet.hbs`;
-        case "Weapon":
-          return `${path}/item-weapon-sheet.hbs`;
-          case "NPC":
-            return `${path}/item-npc.hbs`;
+      case "Weapon":
+        return `${path}/item-weapon-sheet.hbs`;
+      case "NPC":
+        return `${path}/item-npc.hbs`;
+      case "Skill":
+        return `${path}/item-skill.hbs`;
       default:
         return `${path}/item-sheet.hbs`;
     }

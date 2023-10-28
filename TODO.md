@@ -1,5 +1,4 @@
 # Current List
- - make NPC items function with PC Allies and Enemies
  - make it possible to add new skills
     - maybe skills as items? would need to rework some things
  - UI overhaul

@@ -4,14 +4,28 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <br>
-      <div class="resources grid grid-3col">
-        <div class="resource flex-group-center">
-          <span>Level Requirements</span>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" placeholder="Fate" name="system.requirements.fate" value="{{system.requirements.fate}}" data-dtype="Number"/>
-            <input type="text" placeholder="Persona" name="system.requirements.persona" value="{{system.requirements.persona}}" data-dtype="Number"/>
-          </div>
-        </div>
+      <div>
+        Beginners Luck: <input type="checkbox" name="system.beginners_luck" data-dtype="Boolean" {{checked system.beginners_luck}}/>
+      </div>
+      <div>
+        Based On:
+          <select name="system.based_on">
+            {{selectOptions system.based_on_options selected=system.based_on}}
+          </select>
+
+
+      </div>
+      <br>
+      <div>
+        Rating: <input type="text" name="system.rating" value="{{system.rating}}" data-dtype="Number"/>
+      </div>
+      <br>
+      <div>
+        Passes: <input type="text" name="system.passes" value="{{system.passes}}" data-dtype="Number"/>
+      </div>
+      <br>
+      <div>
+        Fails: <input type="text" name="system.fails" value="{{system.fails}}" data-dtype="Number"/>
       </div>
     </div>
   </header>

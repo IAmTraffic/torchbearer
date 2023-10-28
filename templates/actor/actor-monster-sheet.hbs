@@ -96,16 +96,16 @@
   <div>
     <h2>Weapons</h2>
     <ol class="items-list">
-      <li class="item flexrow items-header">
+      {{!-- <li class="item flexrow items-header">
         <div class="item-name">Benefit</div>
-      </li>
+      </li> --}}
       {{#each weapons as |item id|}}
         <li class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-name flexrow">
             <div class="item-image">
               <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
             </div>
-            <h4><a class="item-control item-edit">{{item.name}}</a></h4>
+            <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
           </div>
           <div class="item-controls">
             <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
