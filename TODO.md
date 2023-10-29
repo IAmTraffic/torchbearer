@@ -1,6 +1,5 @@
 # Current List
- - make it possible to add new skills
-    - maybe skills as items? would need to rework some things
+ - divine magic
  - UI overhaul
 
 # Future list
