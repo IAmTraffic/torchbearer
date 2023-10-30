@@ -23,6 +23,8 @@ export class TorchbearerItemSheet extends ItemSheet {
     switch (this.item.type){
       case "Spell":
         return `${path}/item-spell-sheet.hbs`;
+      case "Invocation":
+        return `${path}/item-invocation-sheet.hbs`;
       case "Level Feature":
         return `${path}/item-feature-sheet.hbs`;
       case "Weapon":

@@ -1,0 +1,49 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    <textarea placeholder="A divine invocation does something..." name="system.description" data-dtype="String">{{system.description}}</textarea>
+    <h2>{{item.name}} Effect</h2>
+    <textarea placeholder="... and that something has an effect" name="system.effect" data-dtype="String">{{system.effect}}</textarea>
+   
+    <table>
+      <tr>
+        <td>
+          <span><b>Relic:</b> <input type="text" name="system.relic" value="{{system.relic}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>Sacramental:</b> <input type="text" name="system.sacramental" value="{{system.sacramental}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span><b>Ritual:</b> <input type="text" name="system.ritual" value="{{system.ritual}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>Invocation Time:</b> <input type="text" name="system.invocation_time" value="{{system.invocation_time}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span><b>Duration:</b> <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String"/></span>
+        </td>
+        <td>
+          <span><b>Immortal Burden:</b> <input type="text" name="system.immortal_burden" value="{{system.immortal_burden}}" data-dtype="String"/></span>
+        </td>
+      </tr>
+    </table>
+    
+    <h2>{{item.name}} Factors</h2>
+    <textarea placeholder="... and it requires some effort" name="system.factors" data-dtype="String">{{system.factors}}</textarea>
+
+    <h2>Misc. Notes</h2>
+    <textarea name="system.misc" data-dtype="String">{{system.misc}}</textarea>
+  </section>
+</form>

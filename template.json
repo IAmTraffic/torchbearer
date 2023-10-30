@@ -386,7 +386,7 @@
           }
         }
       },
-      "using_text_inventory": false,
+      "using_text_inventory": true,
       "bio": {
         "allies_and_enemies": [],
         "biography": "",
@@ -426,7 +426,7 @@
     }
   },
   "Item": {
-    "types": ["Item", "Level Feature", "Spell", "Weapon", "Skill", "NPC"],
+    "types": ["Item", "Level Feature", "Spell", "Invocation", "Weapon", "Skill", "NPC"],
     "templates": {
       "base": {
         "description": ""
@@ -446,6 +446,12 @@
             "size": 1
           }
         }
+      },
+      "magic": {
+        "effect": "",
+        "duration": "",
+        "factors": "",
+        "misc": ""
       }
     },
     "Item": {
@@ -462,17 +468,20 @@
       }
     },
     "Spell": {
-      "templates": ["base"],
-      "effect": "",
+      "templates": ["base", "magic"],
       "focus": "",
       "materials": "",
       "to_scribe": "",
       "to_learn": "",
       "casting": "",
-      "casting_time": "",
-      "duration": "",
-      "factors": "",
-      "misc": ""
+      "casting_time": ""
+    },
+    "Invocation": {
+      "relic": "",
+      "sacramental": "",
+      "ritual": "",
+      "invocation_time": "",
+      "immortal_burden": ""
     },
     "Weapon": {
       "templates": ["base", "inventory_item"],

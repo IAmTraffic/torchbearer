@@ -1,11 +1,11 @@
 # Current List
- - divine magic
+ - make item types have meaningful chat messages when rolled
+ - compendia of skills, spells, level features, etc.
  - UI overhaul
 
 # Future list
 Character sheet
- - rework items to be Foundry Items, not text boxes
- - make level benefits have programmatical effects
+ - rework items to be Foundry Items, not text boxes?
  - replace textarea with TinyMCE editors
 
  

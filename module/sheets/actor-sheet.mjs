@@ -70,6 +70,7 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+    console.log(context.system.text_inventory.body)
     return;
     //Old
     // Handle ability scores.
@@ -87,6 +88,7 @@ export class TorchbearerActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     let spells = [];
+    let invocations = [];
     let features = [];
     let weapons = [];
     let allies_and_enemies = [];
@@ -97,6 +99,8 @@ export class TorchbearerActorSheet extends ActorSheet {
       
       if(i.type === "Spell"){
         spells.push(i)
+      }else if(i.type === "Invocation"){
+        invocations.push(i)
       }else if(i.type === "Level Feature"){
         features.push(i)
       }else if(i.type === "Weapon"){
@@ -109,6 +113,7 @@ export class TorchbearerActorSheet extends ActorSheet {
     }
 
     context.spells = spells
+    context.invocations = invocations
     context.features = features
     context.weapons = weapons
     context.allies_and_enemies = allies_and_enemies
