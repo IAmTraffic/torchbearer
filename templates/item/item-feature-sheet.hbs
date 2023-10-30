@@ -4,14 +4,20 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <br>
-      <div class="resources grid grid-3col">
-        <div class="resource flex-group-center">
-          <span>Level Requirements</span>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" placeholder="Fate" name="system.requirements.fate" value="{{system.requirements.fate}}" data-dtype="Number"/>
-            <input type="text" placeholder="Persona" name="system.requirements.persona" value="{{system.requirements.persona}}" data-dtype="Number"/>
-          </div>
+      <div class="flex-group-center">
+        <h3>Level Requirements</h3>
+        <div class="grid grid-2col">
+          <span>Fate</span>
+          <span>Persona</span>
         </div>
+        <div class="grid grid-2col">
+          <input type="text" placeholder="Fate" name="system.requirements.fate" value="{{system.requirements.fate}}" data-dtype="Number"/>
+          <input type="text" placeholder="Persona" name="system.requirements.persona" value="{{system.requirements.persona}}" data-dtype="Number"/>
+        </div>
+        {{!-- <div style="display:flex;align-items:center;margin:10px">
+          <input type="text" placeholder="Fate" name="system.requirements.fate" value="{{system.requirements.fate}}" data-dtype="Number"/>
+          <input type="text" placeholder="Persona" name="system.requirements.persona" value="{{system.requirements.persona}}" data-dtype="Number"/>
+        </div> --}}
       </div>
     </div>
   </header>

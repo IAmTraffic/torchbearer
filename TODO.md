@@ -1,7 +1,6 @@
 # Bug
 
 # Current List
- - item UI overhaul
  - rolling dialog / message UI overhaul
 
 # Future list
