@@ -9,9 +9,12 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    <textarea placeholder="A divine invocation does something..." name="system.description" data-dtype="String">{{system.description}}</textarea>
+    <h2>Description</h2>
+    {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- <textarea placeholder="A divine invocation does something..." name="system.description" data-dtype="String">{{system.description}}</textarea> --}}
     <h2>{{item.name}} Effect</h2>
-    <textarea placeholder="... and that something has an effect" name="system.effect" data-dtype="String">{{system.effect}}</textarea>
+    {{editor system.effect target="system.effect" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- <textarea placeholder="... and that something has an effect" name="system.effect" data-dtype="String">{{system.effect}}</textarea> --}}
    
     <table>
       <tr>
@@ -41,9 +44,11 @@
     </table>
     
     <h2>{{item.name}} Factors</h2>
-    <textarea placeholder="... and it requires some effort" name="system.factors" data-dtype="String">{{system.factors}}</textarea>
+    {{editor system.factors target="system.factors" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- <textarea placeholder="... and it requires some effort" name="system.factors" data-dtype="String">{{system.factors}}</textarea> --}}
 
     <h2>Misc. Notes</h2>
-    <textarea name="system.misc" data-dtype="String">{{system.misc}}</textarea>
+    {{editor system.misc target="system.misc" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- <textarea name="system.misc" data-dtype="String">{{system.misc}}</textarea> --}}
   </section>
 </form>

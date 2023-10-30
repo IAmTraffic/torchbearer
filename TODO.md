@@ -1,15 +1,15 @@
 # Bug
 
 # Current List
- - UI overhaul
+ - item UI overhaul
+ - rolling dialog / message UI overhaul
 
 # Future list
 Character sheet
  - rework items to be Foundry Items, not text boxes?
- - replace textarea with TinyMCE editors
 
 
-- compendia of skills, spells, level features, etc.
+- compendia of skills, spells, level features, etc.?
  
-- make universal grind
-- make universal conflict page
+- make universal grind?
+- make universal conflict page?

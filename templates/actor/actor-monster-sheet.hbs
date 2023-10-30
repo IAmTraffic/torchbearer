@@ -2,9 +2,11 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <div class="flexrow">
+        <img class="profile-img" style="position:relative;top:0%" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      </div>
       <div class="resources grid grid-3col">
 
         <div class="resource flex-group-center">
@@ -31,118 +33,130 @@
       </div>
 
       <div class="grid grid-2col">
-        <div class="flexrow">
-          <label for="system.nature_descriptors" class="resource-label"><b>Nature Descriptors: </b></label>
+        <div style="display:flex;align-items:center;margin-bottom:10px">
+          <label for="system.nature_descriptors" class="resource-label"><b>Nature Descriptors:&nbsp;</b></label>
           <input type="text" name="system.nature_descriptors" value="{{system.nature_descriptors}}" data-dtype="String"/>
         </div>
-        <div class="flexrow">
-          <label for="system.type" class="resource-label"><b>Type: </b></label>
+        <div style="display:flex;align-items:center;margin-bottom:10px">
+          <label for="system.type" class="resource-label"><b>Type:&nbsp;</b></label>
           <input type="text" name="system.type" value="{{system.type}}" data-dtype="String"/>
         </div>
       </div>
 
-      <div class="flexrow">
-        <label for="system.instinct" class="resource-label"><b>Instinct: </b></label>
-        <input type="text" name="system.instinct" value="{{system.instinct}}" data-dtype="String"/>
+      <div class="grid grid-2col">
+        <div style="display:flex;align-items:center;margin:0px">
+          <label for="system.instinct" class="resource-label"><b>Instinct:&nbsp;</b></label>
+          <input type="text" name="system.instinct" value="{{system.instinct}}" data-dtype="String"/>
+        </div>
       </div>
     </div>
   </header>
   
-  <div>
-    <h2>Special Rules</h2>
-    <div class="resizable">
-      <textarea placeholder="Special Rules" name="system.special_rules" data-dtype="String">{{system.special_rules}}</textarea>
+  <body>
+    <div>
+      <h1 style="text-align:center">Description</h1>
+      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
     </div>
-  </div>
 
-  <div>
-    <h2>Hit Points</h2>
-    <div class="resources grid grid-3col">
-      <div class="resource flex-group-center">
-        <input type="text" name="system.hp.high.descriptor" value="{{system.hp.high.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
-        <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.hp.high.current" value="{{system.hp.high.current}}" data-dtype="Number"/>
-          /
-          <input type="text" name="system.hp.high.max" value="{{system.hp.high.max}}" data-dtype="Number"/>
-        </div>
-      </div>
-
-      <div class="resource flex-group-center">
-        <input type="text" name="system.hp.med.descriptor" value="{{system.hp.med.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
-        <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.hp.med.current" value="{{system.hp.med.current}}" data-dtype="Number"/>
-          /
-          <input type="text" name="system.hp.med.max" value="{{system.hp.med.max}}" data-dtype="Number"/>
-        </div>
-      </div>
-
-      <div class="resource flex-group-center">
-        <input type="text" name="system.hp.low.descriptor" value="{{system.hp.low.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
-        <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.hp.low.current" value="{{system.hp.low.current}}" data-dtype="Number"/>
-          /
-          <input type="text" name="system.hp.low.max" value="{{system.hp.low.max}}" data-dtype="Number"/>
-        </div>
-      </div>
+    <div>
+      <h1 style="text-align: center">Special Rules</h1>
+      {{editor system.special_rules target="system.special_rules" rollData=rollData button=true owner=owner editable=editable}}
+      {{!-- <div class="resizable">
+        <textarea placeholder="Special Rules" name="system.special_rules" data-dtype="String">{{system.special_rules}}</textarea>
+      </div> --}}
     </div>
-    <br>
-    <p><b><i>Other Conflict Hit Points:</i> Within Nature:</b> Roll Nature. Add successes to Nature rating. <b>Outside of Nature:</b> Roll half Nature. Add successes to Nature rating.</p>
-  </div>
 
-  <div>
-    <span><b>Armor: </b><input type="text" name="system.armor" value="{{system.armor}}" data-dtype="String"/></span>
-  </div>
+    <div>
+      <h1 style="text-align: center">Hit Points</h1>
+      <div class="resources grid grid-3col">
+        <div class="resource flex-group-center" style="margin-right:20px;margin-left:20px">
+          <input type="text" name="system.hp.high.descriptor" value="{{system.hp.high.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
+          <div style="display:flex;align-items:center;margin-top:5px">
+            <input type="text" name="system.hp.high.current" value="{{system.hp.high.current}}" data-dtype="Number"/>
+            &nbsp;/&nbsp;
+            <input type="text" name="system.hp.high.max" value="{{system.hp.high.max}}" data-dtype="Number"/>
+          </div>
+        </div>
 
-  <div>
-    <h2>Weapons</h2>
-    <ol class="items-list">
-      {{!-- <li class="item flexrow items-header">
-        <div class="item-name">Benefit</div>
-      </li> --}}
-      {{#each weapons as |item id|}}
-        <li class="item flexrow" data-item-id="{{item._id}}">
-          <div class="item-name flexrow">
-            <div class="item-image">
-              <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+        <div class="resource flex-group-center" style="margin-right:20px;margin-left:20px">
+          <input type="text" name="system.hp.med.descriptor" value="{{system.hp.med.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
+          <div style="display:flex;align-items:center;margin-top:5px">
+            <input type="text" name="system.hp.med.current" value="{{system.hp.med.current}}" data-dtype="Number"/>
+            &nbsp;/&nbsp;
+            <input type="text" name="system.hp.med.max" value="{{system.hp.med.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center" style="margin-right:20px;margin-left:20px">
+          <input type="text" name="system.hp.low.descriptor" value="{{system.hp.low.descriptor}}" placeholder="Conflict Type" data-dtype="String"/>
+          <div style="display:flex;align-items:center;margin-top:5px">
+            <input type="text" name="system.hp.low.current" value="{{system.hp.low.current}}" data-dtype="Number"/>
+            &nbsp;/&nbsp;
+            <input type="text" name="system.hp.low.max" value="{{system.hp.low.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p><b><i>Other Conflict Hit Points:</i> Within Nature:</b> Roll Nature. Add successes to Nature rating. <b>Outside of Nature:</b> Roll half Nature. Add successes to Nature rating.</p>
+    </div>
+
+    
+    <div style="display:flex;margin-top:10px">
+      <span><b>Armor:&nbsp;</b></span>
+      <input type="text" name="system.armor" value="{{system.armor}}" data-dtype="String"/>
+    </div>
+
+    <div>
+      <h1 style="text-align: center">Weapons</h1>
+      <ol class="items-list">
+        {{!-- <li class="item flexrow items-header">
+          <div class="item-name">Benefit</div>
+        </li> --}}
+        {{#each weapons as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name flexrow">
+              <div class="item-image">
+                <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+              </div>
+              <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
             </div>
-            <h4><a class="item-control item-edit"><b>{{item.name}}</b></a></h4>
-          </div>
-          <div class="item-controls">
-            <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-          </div>
-        </li>
-      {{/each}}
-    </ol>
-  </div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+    </div>
 
-  {{!-- Sheet Tab Navigation --}}
-  {{!-- <nav class="sheet-tabs tabs" data-group="primary"> --}}
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    {{!-- <a class="item" data-tab="description">Description</a> --}}
-    {{!-- <a class="item" data-tab="items">Items</a> --}}
-    {{!-- <a class="item" data-tab="effects">Effects</a> --}}
-  {{!-- </nav> --}}
+    {{!-- Sheet Tab Navigation --}}
+    {{!-- <nav class="sheet-tabs tabs" data-group="primary"> --}}
+      {{!-- Default tab is specified in actor-sheet.mjs --}}
+      {{!-- <a class="item" data-tab="description">Description</a> --}}
+      {{!-- <a class="item" data-tab="items">Items</a> --}}
+      {{!-- <a class="item" data-tab="effects">Effects</a> --}}
+    {{!-- </nav> --}}
 
-  {{!-- Sheet Body --}}
-  {{!-- <section class="sheet-body"> --}}
+    {{!-- Sheet Body --}}
+    {{!-- <section class="sheet-body"> --}}
 
-    {{!-- Biography Tab --}}
-    {{!-- <div class="tab biography" data-group="primary" data-tab="description"> --}}
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{!-- {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}} --}}
-    {{!-- </div> --}}
+      {{!-- Biography Tab --}}
+      {{!-- <div class="tab biography" data-group="primary" data-tab="description"> --}}
+        {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+        {{!-- {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}} --}}
+      {{!-- </div> --}}
 
-    {{!-- Owned Items Tab --}}
-    {{!-- <div class="tab items" data-group="primary" data-tab="items"> --}}
-       {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}} --}}
-    {{!-- </div> --}}
+      {{!-- Owned Items Tab --}}
+      {{!-- <div class="tab items" data-group="primary" data-tab="items"> --}}
+        {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-items.hbs"}} --}}
+      {{!-- </div> --}}
 
-    {{!-- Active Effects Tab
-    {{!-- <div class="tab effects flexcol" data-group="primary" data-tab="effects"> --}}
-      {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs"}} --}}
-    {{!-- </div> --}}
+      {{!-- Active Effects Tab
+      {{!-- <div class="tab effects flexcol" data-group="primary" data-tab="effects"> --}}
+        {{!-- {{> "systems/ivys_torchbearer/templates/actor/parts/actor-effects.hbs"}} --}}
+      {{!-- </div> --}}
 
-  {{!-- </section> --}}
+    {{!-- </section> --}}
+  </body>
 </form>
 

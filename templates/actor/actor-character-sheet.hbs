@@ -30,12 +30,13 @@
       </div>
       
       {{!-- Conditions Bar --}}
-      <div class="resources flexrow flex-between">
-      {{!-- <div class="resources grid grid-8col"> --}}
+      {{!-- <div class="resources flexrow flex-between"> --}}
+      <div class="resources grid grid-8col" style="border: 1px solid #777777;border-radius:3px;padding:5px">
           {{#each system.conditions as |value key|}}
-            <div class="flexcol flex-center" style="margin: 10px; text-align: center; border: 1px solid black; padding-left: 10px;padding-right: 10px" title="{{value.hover_text}}&#013;{{value.recovery}}">
-              <label for="system.conditions.{{key}}.value" class="resource-label" style="display:flex; align-items: center">{{value.display_name}}</label>
-              <input type="checkbox" name="system.conditions.{{key}}.value" data-dtype="Boolean" {{checked value.value}}/>
+            <div class="flexcol" style="align-items: center;text-align: center" title="{{value.hover_text}}&#013;{{value.recovery}}">
+              <b style="display:flex;align-items:center">{{value.display_name}}</b>
+              {{!-- <label for="system.conditions.{{key}}.value" class="resource-label" style="display:block">{{value.display_name}}</label> --}}
+              <input type="checkbox" name="system.conditions.{{key}}.value" style="display:block" data-dtype="Boolean" {{checked value.value}}/>
             </div>
           {{/each}}
       </div>
@@ -61,62 +62,64 @@
 
     {{!-- Core Stats Tab --}}
     <div class="tab features" data-group="primary" data-tab="core">
-      <section class="grid grid-3col">
+      <section class="grid grid-2col">
+      {{!-- <section class="grid grid-3col"> --}}
         <aside class="sidebar">
-          <h2>Who You Are</h2>
+          <h1 style="text-align: center">Who You Are</h1>
           <div class="resources grid grid-2col">
             <div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.stock" class="resource-label">Stock: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.stock" class="resource-label">Stock:&nbsp;</label>
                 <input type="text" name="system.who_you_are.stock" value="{{system.who_you_are.stock}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.class" class="resource-label">Class: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.class" class="resource-label">Class:&nbsp;</label>
                 <input type="text" name="system.who_you_are.class" value="{{system.who_you_are.class}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.age" class="resource-label">Age: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.age" class="resource-label">Age:&nbsp;</label>
                 <input type="text" name="system.who_you_are.age" value="{{system.who_you_are.age}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.home" class="resource-label">Home: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.home" class="resource-label">Home:&nbsp;</label>
                 <input type="text" name="system.who_you_are.home" value="{{system.who_you_are.home}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.raiment" class="resource-label">Raiment: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.raiment" class="resource-label">Raiment:&nbsp;</label>
                 <input type="text" name="system.who_you_are.raiment" value="{{system.who_you_are.raiment}}" data-dtype="String"/>
               </div>
             </div>
 
             <div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.parents" class="resource-label">Parents: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.parents" class="resource-label">Parents:&nbsp;</label>
                 <input type="text" name="system.who_you_are.parents" value="{{system.who_you_are.parents}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.mentor" class="resource-label">Mentor: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.mentor" class="resource-label">Mentor:&nbsp;</label>
                 <input type="text" name="system.who_you_are.mentor" value="{{system.who_you_are.mentor}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.friend" class="resource-label">Friend: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.friend" class="resource-label">Friend:&nbsp;</label>
                 <input type="text" name="system.who_you_are.friend" value="{{system.who_you_are.friend}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.enemy" class="resource-label">Enemy: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.enemy" class="resource-label">Enemy:&nbsp;</label>
                 <input type="text" name="system.who_you_are.enemy" value="{{system.who_you_are.enemy}}" data-dtype="String"/>
               </div>
-              <div class="grid grid-2col flex-group-center">
-                <label for="system.who_you_are.level" class="resource-label">Level: </label>
+              <div style="display:flex;align-items:center;margin:10px">
+                <label for="system.who_you_are.level" class="resource-label">Level:&nbsp;</label>
                 <input type="text" name="system.who_you_are.level" value="{{system.who_you_are.level}}" data-dtype="Number"/>
               </div>
             </div>
           </div>
 
+          {{!-- Artha --}}
           <div title="Level 1: 0F 0P&#013;Level 2: 3F 3P&#013;Level 3: 7F 6P&#013;Level 4: 14F 12P&#013;Level 5: 22F 20P&#013;Level 6: 31F 30P&#013;Level 7: 41F 42P&#013;Level 8: 52F 56P&#013;Level 9: 64F 72P&#013;Level 10: 78F 98P&#013;">
-            <h2 style="text-align: center">Artha</h2>
+            <h1 style="text-align: center">Artha</h1>
             <div class="resources grid grid-2col">
               <div>
-                <h3 style="text-align: center">Fate</h3>
+                <h2 style="text-align: center">Fate</h2>
                 <div class="flexrow flex-between">
                   <input style="text-align: center" type="number" name="system.artha.fate.current" value="{{system.artha.fate.current}}" data-dtype="Number"/>
                   <span style="text-align: center"> / </span>
@@ -124,7 +127,7 @@
                 </div>
               </div>
               <div>
-                <h3 style="text-align: center">Persona</h3>
+                <h2 style="text-align: center">Persona</h2>
                 <div class="flexrow flex-between">
                   <input style="text-align: center" type="number" name="system.artha.persona.current" value="{{system.artha.persona.current}}" data-dtype="Number"/>
                   <span style="text-align: center"> / </span>
@@ -136,23 +139,24 @@
         </aside>
 
         {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          <h2>What You Fight For</h2>
+        <section class="main">
+        {{!-- <section class="main grid-span-2"> --}}
+          <h1 style="text-align: center">What You Fight For</h1>
           <div>
             <div style="padding: 5px">
-              <h3>Belief</h3>
+              <h2>Belief</h2>
               <textarea placeholder="Uphold your belief in your actions to earn a fate point" name="system.what_you_fight_for.belief" data-dtype="String">{{system.what_you_fight_for.belief}}</textarea>
             </div>
             <div style="padding: 5px">
-              <h3>Creed</h3>
+              <h2>Creed</h2>
               <textarea placeholder="Endure a moral test driven by your creed and earn a persona point" name="system.what_you_fight_for.creed" data-dtype="String">{{system.what_you_fight_for.creed}}</textarea>
             </div>
             <div style="padding: 5px">
-              <h3>Goal</h3>
+              <h2>Goal</h2>
               <textarea placeholder="Accomplish a goal to earn a persona point" name="system.what_you_fight_for.goal" data-dtype="String">{{system.what_you_fight_for.goal}}</textarea>
             </div>
             <div style="padding: 5px">
-              <h3>Instinct</h3>
+              <h2>Instinct</h2>
               <textarea placeholder="Use an instinct to aid the group and earn a fate point" name="system.what_you_fight_for.instinct" data-dtype="String">{{system.what_you_fight_for.instinct}}</textarea>
             </div>
           </div>
@@ -162,18 +166,19 @@
 
       </section>
 
-      <section class="grid grid-5col">
-        <div class="grid-span-2">
-          <h2>Traits</h2>
-          <div class="grid grid-4col">
-            <b>Trait Name</b>
-            <b>Trait Level</b>
-            <b>Beneficial Uses</b>
-            <b>Checks</b>
+      <section class="grid grid-6col">
+        {{!-- Traits --}}
+        <div class="grid-span-3">
+          <h1 style="text-align: center">Traits</h1>
+          <div class="grid grid-5col">
+            <b style="text-align:center" class="main grid-span-2">Trait Name</b>
+            <b style="text-align:center">Trait Level</b>
+            <b style="text-align:center">Beneficial Uses</b>
+            <b style="text-align:center">Checks</b>
           </div>
           {{#each system.traits as |value key|}}
-            <div class="grid grid-4col">
-              <input type="text" name="system.traits.{{key}}.name" value="{{value.name}}" data-dtype="String"/>
+            <div class="grid grid-5col">
+              <input class="grid-span-2" type="text" name="system.traits.{{key}}.name" value="{{value.name}}" data-dtype="String"/>
               <input title="1: +1D per session&#013;2: +1D twice per session&#013;3: +1s on all successful / tied rolls" type="number" name="system.traits.{{key}}.level" value="{{value.level}}" data-dtype="Number"/>
               {{#if (gt value.level 2)}}
                 <span>N/A (Unlimited Uses)</span>
@@ -184,28 +189,30 @@
             </div>
           {{/each}}
         </div>
+        {{!-- Wises --}}
         <div class="grid-span-3">
-          <h2>Wises</h2>
+          <h1 style="text-align: center">Wises</h1>
           {{#each system.wises as |value key|}}
             <input type="text" name="system.wises.{{key}}.name" value="{{value.name}}" data-dtype="String"/>
             <div class="grid grid-4col">
-              <div class="flexrow">
+              <div style="display:flex;align-items:center">
                 <label for="system.wises.{{key}}.pass" class="resource-label" style="display:flex; align-items: center">Pass: </label>
                 <input type="checkbox" name="system.wises.{{key}}.pass" data-dtype="Boolean" {{checked value.pass}}/>
               </div>
-              <div class="flexrow">
+              <div style="display:flex;align-items:center">
                 <label for="system.wises.{{key}}.fail" class="resource-label" style="display:flex; align-items: center">Fail: </label>
                 <input type="checkbox" name="system.wises.{{key}}.fail" data-dtype="Boolean" {{checked value.fail}}/>
               </div>
-              <div class="flexrow">
+              <div style="display:flex;align-items:center">
                 <label for="system.wises.{{key}}.fate" class="resource-label" style="display:flex; align-items: center">Fate: </label>
                 <input type="checkbox" name="system.wises.{{key}}.fate" data-dtype="Boolean" {{checked value.fate}}/>
               </div>
-              <div class="flexrow">
+              <div style="display:flex;align-items:center">
                 <label for="system.wises.{{key}}.persona" class="resource-label" style="display:flex; align-items: center">Persona: </label>
                 <input type="checkbox" name="system.wises.{{key}}.persona" data-dtype="Boolean" {{checked value.persona}}/>
               </div>
-            </div>  
+            </div>
+            <div class="underline"></div>
           {{/each}}
         </div>
       </section>
@@ -214,63 +221,52 @@
     <div class="tab skills_abilities" data-group="primary" data-tab="skills_abilities">
       {{!-- Abilities --}}
       <div>
-        <h2>Abilities</h2>
+        <h1 style="text-align: center">Abilities</h1>
         <div class="grid grid-2col">
-          {{!-- Raw Abilities --}}
-          <div>
-            <div class="flexrow">
-              <span>Raw Ability</span>
-              <span>Rating</span>
-              <span>Passes</span>
-              <span>Fails</span>
-            </div>
-            {{#each system.abilities.raw_abilities as |value key|}}
-              <div class="flexrow">
-                <span class="rollable" data-roll="{{key}}" data-label="{{value.name}}">{{value.name}}</span>
-                {{#if (eq key "nature")}}
-                  <div class="grid grid-3col">
-                    <input type="number" name="system.abilities.raw_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
-                    <span> / </span>
-                    <input type="number" name="system.abilities.raw_abilities.{{key}}.max" value="{{value.max}}" data-dtype="Number"/>
-                  </div>
-                {{else}}
-                  <input type="number" name="system.abilities.raw_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
-                {{/if}}
-                <input type="number" name="system.abilities.raw_abilities.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
-                <input type="number" name="system.abilities.raw_abilities.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
+          {{#each system.abilities as |ability_value ability_key|}}
+            <div style="margin: 5px">
+              <div class="flexrow" style="margin-bottom:5px">
+                <span style="text-align:center"></span>
+                <span style="text-align:center"><b>Rating</b></span>
+                <span style="text-align:center"><b>Passes</b></span>
+                <span style="text-align:center"><b>Fails</b></span>
               </div>
-            {{/each}}
-          </div>
-
-          {{!-- Town Abilities --}}
-          <div>
-            <div class="flexrow">
-              <span>Town Ability</span>
-              <span>Rating</span>
-              <span>Passes</span>
-              <span>Fails</span>
+              {{#each ability_value as |value key|}}
+                <div class="flexrow" style="margin-bottom:10px;display:flex;align-items:center">
+                  <span style="text-align:right;margin-right: 10px;font-size:13pt" class="rollable" data-roll="{{key}}" data-label="{{value.name}}"><b>{{value.name}}</b></span>
+                  {{#if (eq key "nature")}}
+                    <div style="margin-right:5px;align-items:center" class="flexrow flex-center flex-between">
+                      <input type="number" name="system.abilities.{{ability_key}}.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+                      &nbsp;/&nbsp;
+                      <input type="number" name="system.abilities.{{ability_key}}.{{key}}.max" value="{{value.max}}" data-dtype="Number"/>
+                    </div>
+                  {{else}}
+                    <input style="margin-right:5px" type="number" name="system.abilities.{{ability_key}}.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
+                  {{/if}}
+                  <input style="margin-right:5px" type="number" name="system.abilities.{{ability_key}}.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
+                  <input type="number" name="system.abilities.{{ability_key}}.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
+                </div>
+                <div class="underline"></div>
+              {{/each}}
             </div>
-            {{#each system.abilities.town_abilities as |value key|}}
-              <div class="flexrow">
-                <span class="rollable" data-roll="{{key}}" data-label="{{value.name}}">{{value.name}}</span>
-                <input type="number" name="system.abilities.town_abilities.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
-                <input type="number" name="system.abilities.town_abilities.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
-                <input type="number" name="system.abilities.town_abilities.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
-              </div>
-            {{/each}}
-          </div>
+          {{/each}}
         </div>
-        <div class="flexrow">
-          Prescedence:
-          <input type="number" name="system.prescedence" value="{{system.prescedence}}" data-dtype="Number"/>
-          Might:
-          <input type="number" name="system.might" value="{{system.might}}" data-dtype="Number"/>
+
+        <div class="grid grid-2col">
+          <div class="flex-group-center" style="align-items:center">
+            <h2 style="width:70%;display:inline-block">Prescedence:</h2>
+            <input style="width:30%" type="number" name="system.prescedence" value="{{system.prescedence}}" data-dtype="Number"/>
+          </div>
+          <div class="flex-group-center" style="align-items:center">
+            <h2 style="width:70%;display:inline-block">Might:</h2>
+            <input style="width:30%" type="number" name="system.might" value="{{system.might}}" data-dtype="Number"/>
+          </div>
         </div>
 
       </div>
         
       {{!-- Skills --}}
-      <h2>Skills</h2>
+      <h1 style="text-align: center">Skills</h1>
       <div>
         <ol class="items-list">
         <li class="item flexrow items-header">
@@ -304,23 +300,6 @@
         {{/each}}
       </ol>
       </div>
-
-      {{!-- <div>
-        <div class="flexrow">
-          <span>Skill</span>
-          <span>Rating</span>
-          <span>Passes</span>
-          <span>Fails</span>
-        </div>
-        {{#each system.skills as |value key|}}
-          <div class="flexrow">
-            <span class="rollable" data-roll="{{key}}" data-label="{{capitalize key}}">{{capitalize key}}</span>
-            <input type="number" name="system.skills.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
-            <input type="number" name="system.skills.{{key}}.passes" value="{{value.passes}}" data-dtype="Number"/>
-            <input type="number" name="system.skills.{{key}}.fails" value="{{value.fails}}" data-dtype="Number"/>
-          </div>
-        {{/each}}
-      </div> --}}
     </div>
 
 
@@ -440,21 +419,23 @@
     <div class="tab biography" data-group="primary" data-tab="bio">
       {{!-- Biography --}}
       <div>
-        <h2>Biography</h2>
-        <textarea placeholder="Biography" name="system.bio.biography" data-dtype="String">{{system.bio.biography}}</textarea>
+        <h1 style="text-align:center">Biography</h1>
+        {{editor system.bio.biography target="system.bio.biography" rollData=rollData button=true owner=owner editable=editable}}
+        {{!-- <textarea placeholder="Biography" name="system.bio.biography" data-dtype="String">{{system.bio.biography}}</textarea> --}}
       </div>
 
       
       {{!-- Notes --}}
       <div>
-        <h2>Notes</h2>
-        <textarea placeholder="Notes" name="system.bio.notes" data-dtype="String">{{system.bio.notes}}</textarea>
+        <h1 style="text-align:center">Notes</h1>
+        {{editor system.bio.notes target="system.bio.notes" rollData=rollData button=true owner=owner editable=editable}}
+        {{!-- <textarea placeholder="Notes" name="system.bio.notes" data-dtype="String">{{system.bio.notes}}</textarea> --}}
       </div>
 
       
       {{!-- Allies and Enemies --}}
       <div>
-        <h2>Allies and Enemies</h2>
+        <h1 style="text-align:center">Allies and Enemies</h1>
         <ol class="items-list">
         {{!-- <li class="item flexrow items-header">
           <div class="item-name">Benefit</div>
@@ -477,8 +458,9 @@
         {{!-- <textarea placeholder="Allies and Enemies" name="system.bio.allies_and_enemies" data-dtype="String">{{system.bio.allies_and_enemies}}</textarea> --}}
       </div>
 
+      {{!-- Level Benefits --}}
       <div>
-        <h2>Level Benefits</h2>
+        <h1 style="text-align:center">Level Benefits</h1>
         <ol class="items-list">
           {{!-- <li class="item flexrow items-header">
             <div class="item-name">Benefit</div>
