@@ -1,30 +1,12 @@
-<div class="flexrow flex-group-left">
-    <span>Rolling {{label}}: {{baseDice}}D</span>
-    {{!-- <input id="miscDice" type="number" value="0" /> --}}
-</div>
-
-<div class="flexrow flex-group-left">
-    <span>Ob: </span>
-    <input id="ob" type="number" value="1" />
-</div>
+{{> "systems/ivys_torchbearer/templates/rolls/roll-build-dialog.hbs"}}
 
 <h2>Dice to be Halved:</h2>
-<div class="flexrow flex-group-left" title="Wises, Help, Supplies, Gear, etc.">
-    <span>Misc Dice: +</span>
-    <input id="miscDiceHalved" type="number" value="0" />
-    <span>D</span>
-</div>
-
-<h2>Dice to NOT be Halved:</h2>
-<div title="Traits, Persona, Channeled Nature, the Fresh Condition, Special / Magical dice">
-    <div class="flexrow flex-group-left">
-        <span>Misc Dice: +</span>
-        <input id="miscDice" type="number" value="0" />
-        <span>D</span>
-    </div>
-    <div class="flexrow flex-group-left">
-        <span>Misc Successes: +</span>
-        <input id="miscSuccesses" type="number" value="0" />
-        <span>S</span>
+<div class="grid grid-10col" title="Wises, Help, Supplies, Gear, etc.">
+    <div class="grid-span-6">
+        <div style="display:flex;align-items:right">
+            <span style="min-width:120px">Misc Dice: +</span>
+            <input id="miscDiceHalved" type="number" value="0" />
+            <span>D</span>
+        </div>
     </div>
 </div>

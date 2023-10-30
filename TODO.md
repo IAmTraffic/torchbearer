@@ -1,7 +1,6 @@
 # Bug
 
 # Current List
- - rolling dialog / message UI overhaul
 
 # Future list
 Character sheet
