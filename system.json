@@ -15,22 +15,7 @@
   "esmodules": ["module/ivys_torchbearer.mjs"],
   "styles": ["css/ivys_torchbearer.css"],
   "scripts": [],
-  "packs": [
-    {
-      "name": "skills",
-      "label": "Skills",
-      "system": "ivys_torchbearer",
-      "type": "Item",
-      "path": "packs/skills"
-    },
-    {
-      "name": "spells",
-      "label": "Spells",
-      "system": "ivys_torchbearer",
-      "type": "Item",
-      "path": "packs/spells"
-    }
-  ],
+  "packs": [],
   "languages": [
     {
       "lang": "en",

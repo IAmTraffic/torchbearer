@@ -462,6 +462,7 @@
     },
     "Level Feature": {
       "templates": ["base"],
+      "class": "",
       "requirements": {
         "fate": 0,
         "persona": 0
