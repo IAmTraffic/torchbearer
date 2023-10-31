@@ -1,0 +1,22 @@
+1 - create your compendia in some world in Foundry
+2 - copy the "packs" folder from the world into the root directory of your system
+3 - create a file in your system's root directory called ".gitattributes" with the following content:
+packs/** binary
+
+4 - make the "packs" element in system.json look something like this:
+"packs": [
+    {
+      "name": "skills",
+      "label": "Skills",
+      "system": "ivys_torchbearer",
+      "type": "Item",
+      "path": "packs/skills"
+    },
+    {
+      "name": "spells",
+      "label": "Spells",
+      "system": "ivys_torchbearer",
+      "type": "Item",
+      "path": "packs/spells"
+    }
+]

@@ -502,7 +502,10 @@
       "passes": 0,
       "fails": 0,
       "based_on": "",
-      "based_on_options": {"health": "Health", "will": "Will"}
+      "based_on_options": {"health": "Health", "will": "Will"},
+      "help": "",
+      "supplies": "",
+      "gear": ""
     }
   }
 }

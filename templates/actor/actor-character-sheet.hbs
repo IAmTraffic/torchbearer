@@ -233,7 +233,7 @@
               </div>
               {{#each ability_value as |value key|}}
                 <div class="flexrow" style="margin-bottom:10px;display:flex;align-items:center">
-                  <span style="text-align:right;margin-right: 10px;font-size:13pt" class="rollable" data-roll="{{key}}" data-label="{{value.name}}"><b>{{value.name}}</b></span>
+                  <span style="text-align:center;margin-right: 10px;font-size:13pt" class="rollable" data-roll="{{key}}" data-label="{{value.name}}"><b>{{value.name}}</b></span>
                   {{#if (eq key "nature")}}
                     <div style="margin-right:5px;align-items:center" class="flexrow flex-center flex-between">
                       <input type="number" name="system.abilities.{{ability_key}}.{{key}}.rating" value="{{value.rating}}" data-dtype="Number"/>
