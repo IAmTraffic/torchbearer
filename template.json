@@ -426,7 +426,7 @@
     }
   },
   "Item": {
-    "types": ["Item", "Level Feature", "Spell", "Invocation", "Weapon", "Skill", "NPC"],
+    "types": ["Level Feature", "Spell", "Invocation", "Weapon", "Skill", "NPC"],
     "templates": {
       "base": {
         "description": ""
@@ -453,12 +453,6 @@
         "factors": "",
         "misc": ""
       }
-    },
-    "Item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
     },
     "Level Feature": {
       "templates": ["base"],

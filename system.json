@@ -1,8 +1,8 @@
 {
   "id": "ivys_torchbearer",
-  "title": "Torchbearer",
-  "description": "The Torchbearer system for FoundryVTT!",
-  "version": "0.0.0",
+  "title": "Ivy's Torchbearer",
+  "description": "An Unofficial Torchbearer system for FoundryVTT",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": 10,
     "verified": "11.308"
@@ -27,8 +27,8 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "",
-  "manifest": "",
+  "url": "https://github.com/IAmTraffic/torchbearer",
+  "manifest": "https://github.com/IAmTraffic/torchbearer/blob/main/system.json",
   "download": "",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"

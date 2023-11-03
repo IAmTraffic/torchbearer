@@ -1,14 +1,17 @@
-# Bug
+# Bugs
 
-# Current List
- - compendium of skills
+# Currently working on
+ - Nix the Weapon item type, and just give Monsters a text field
+
+# Going to happen
+ - UI overhaul
  - compendium of spells
  - compendium of invocations
  - compendium of level features
 
-# Future list
+# Might happen / Undecided as to whether it is right for the system
 Character sheet
- - rework items to be Foundry Items, not text boxes?
+ - rework items to be Foundry Items, not text boxes
  
-- make universal grind?
-- make universal conflict page?
+- make universal grind
+- make universal conflict page
