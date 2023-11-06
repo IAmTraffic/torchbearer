@@ -71,6 +71,17 @@ Handlebars.registerHelper('capitalize', function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
+Handlebars.registerHelper("calculateSpellCircleSum", function(str) {
+  let actorData = game.actors.get(str).sheet.getData();
+  let circles = 0;
+  for(let spell of actorData.spells){
+    if(spell.system.memorized){
+      circles += spell.system.circle;
+    }
+  }
+  return circles;
+})
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

@@ -3,6 +3,20 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      
+       <div class="grid grid-3col">
+        <div style="display:flex;align-items:center;margin:0px">
+          <span>Circle:</span>
+          <input name="system.circle" type="number" value="{{system.circle}}" data-dtype="Number"/>
+        </div>
+        <div style="display:flex;align-items:center;margin:0px">
+          <span>Memorized:</span>
+          <input type="checkbox" name="system.memorized" data-dtype="Boolean" {{checked system.memorized}}/>
+        </div>
+        <div style="display:flex;align-items:center;margin:0px">
+          <span>In Spellbook:</span>
+          <input type="checkbox" name="system.in_spellbook" data-dtype="Boolean" {{checked system.in_spellbook}}/>
+        </div>
     </div>
   </header>
 

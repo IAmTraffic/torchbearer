@@ -105,6 +105,8 @@
       },
       "prescedence": 0,
       "might": 1,
+      "memory_palace_slots": 0,
+      "spellbook_folios": 0,
       "skills": {
         "alchemist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
         "archanist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
@@ -469,7 +471,10 @@
       "to_scribe": "",
       "to_learn": "",
       "casting": "",
-      "casting_time": ""
+      "casting_time": "",
+      "circle": 1,
+      "memorized": false,
+      "in_spellbook": false
     },
     "Invocation": {
       "relic": "",

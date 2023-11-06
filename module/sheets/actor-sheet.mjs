@@ -69,13 +69,37 @@ export class TorchbearerActorSheet extends ActorSheet {
    *
    * @return {undefined}
    */
-  _prepareCharacterData(context) {
-    console.log(context.system.text_inventory.body)
+  async _prepareCharacterData(context) {
+    // console.log(context.system.text_inventory.body)
+
+    prepareItemFieldsOnActor(context, this)
+
     return;
     //Old
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.TORCHBEARER.abilities[k]) ?? k;
+    }
+
+    async function prepareItemFieldsOnActor(context, sheetData){
+      for(let i of context.items){      
+        if(i.type === "Spell"){
+          $("document").ready(() => {
+            //TODO: this only works the second time you open the character sheet? if you refresh, it won't find the itemCheckboxOnActor elements
+            // console.log(sheetData.form)
+            // console.log(document.getElementsByClassName("itemCheckboxOnActor"))
+            // console.log($(".itemCheckboxOnActor"))
+            // console.log(document.getElementsByName("itemCheckboxOnActor." + i._id + ".system.memorized"))
+            // console.log("itemCheckboxOnActor." + i._id + ".system.memorized")
+            if(document.getElementsByName("itemCheckboxOnActor." + i._id + ".system.memorized").length === 1){
+              document.getElementsByName("itemCheckboxOnActor." + i._id + ".system.memorized")[0].checked = sheetData.actor.items.get(i._id).system.memorized;
+            }
+            if(document.getElementsByName("itemCheckboxOnActor." + i._id + ".system.in_spellbook").length === 1){
+              document.getElementsByName("itemCheckboxOnActor." + i._id + ".system.in_spellbook")[0].checked = sheetData.actor.items.get(i._id).system.in_spellbook;
+            }
+          })
+        }
+      }
     }
   }
 
@@ -147,6 +171,39 @@ export class TorchbearerActorSheet extends ActorSheet {
       item.delete();
       li.slideUp(200, () => this.render(false));
     });
+
+    //Change an item's data based on action on the owning actor's sheet
+    html.find('.itemCheckboxOnActor').on("change", ev => {
+      let target = ev.target;
+      let new_value = target.checked;
+      let field_path = target.name.slice(20, target.name.length);
+      let items = this.actor.items;
+      let item = items.get(field_path.split(".")[0]);
+
+      setObjectPropertyByDynamicPath(item, field_path, new_value);
+
+      this.getData()  //Jog the sheet with the update
+    })
+
+    function setObjectPropertyByDynamicPath(object, path, value){
+      let splitMyPath = path.split(".");
+      if(splitMyPath.length >= 1){
+        return sOPBDPHelper(object, splitMyPath.slice(1, splitMyPath.length), value);
+      }else{
+        console.error("Bad Split Path: " + splitMyPath.toString())
+        return object;
+      }
+    }
+
+    function sOPBDPHelper(object, pathArray, value){
+      if(pathArray.length == 1){
+        object[pathArray[0]] = value;
+        return object;
+      }else{
+        object[pathArray[0]] = sOPBDPHelper(object[pathArray[0]], pathArray.slice(1, pathArray.length), value);
+        return object;
+      }
+    }
 
     // Active Effect management
     html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));

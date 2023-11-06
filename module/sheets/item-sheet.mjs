@@ -77,5 +77,10 @@ export class TorchbearerItemSheet extends ItemSheet {
     if (!this.isEditable) return;
 
     // Roll handlers, click handlers, etc. would go here.
+    html.find("input").on("change", ev => {
+      if(this.actor !== null){
+        this.actor.sheet.getData()  //Jog the update in the owning actor sheet
+      }
+    })
   }
 }
