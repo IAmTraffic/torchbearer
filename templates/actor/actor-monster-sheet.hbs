@@ -108,11 +108,12 @@
 
     <div>
       <h1 style="text-align: center">Weapons</h1>
-      <ol class="items-list">
+      {{editor system.weapons target="system.weapons" rollData=rollData button=true owner=owner editable=editable}}
+      {{!-- <ol class="items-list"> --}}
         {{!-- <li class="item flexrow items-header">
           <div class="item-name">Benefit</div>
         </li> --}}
-        {{#each weapons as |item id|}}
+        {{!-- {{#each weapons as |item id|}}
           <li class="item flexrow" data-item-id="{{item._id}}">
             <div class="item-name flexrow">
               <div class="item-image">
@@ -125,8 +126,8 @@
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
           </li>
-        {{/each}}
-      </ol>
+        {{/each}} --}}
+      {{!-- </ol> --}}
     </div>
 
     {{!-- Sheet Tab Navigation --}}

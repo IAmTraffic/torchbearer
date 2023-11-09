@@ -422,7 +422,8 @@
           "descriptor": ""
         }
       },
-      "armor": ""
+      "armor": "",
+      "weapons": ""
     },
     "Grind": {
       "turn": 0,
@@ -430,7 +431,7 @@
     }
   },
   "Item": {
-    "types": ["Level Feature", "Spell", "Invocation", "Weapon", "Skill", "NPC"],
+    "types": ["Level Feature", "Spell", "Invocation", "Skill", "NPC"],
     "templates": {
       "base": {
         "description": ""
@@ -484,15 +485,6 @@
       "ritual": "",
       "invocation_time": "",
       "immortal_burden": ""
-    },
-    "Weapon": {
-      "templates": ["base", "inventory_item"],
-      "conflicts": "Kill, Capture, and Drive Off",
-      "A": "",
-      "D": "",
-      "F": "",
-      "M": "",
-      "Special": ""
     },
     "NPC": {
       "relationship": ""
