@@ -107,6 +107,8 @@
       "might": 1,
       "memory_palace_slots": 0,
       "spellbook_folios": 0,
+      "immortal_burden": 0,
+      "urdr": 0,
       "skills": {
         "alchemist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
         "archanist": {"rating": 0, "passes": 0, "fails": 0, "based_on": "will"},
