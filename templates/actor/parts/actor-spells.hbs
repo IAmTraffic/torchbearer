@@ -4,12 +4,12 @@
   <div class="flex-group-center" style="align-items:center">
     <h2 style="width:70%;display:inline-block">Memory Palace:</h2>
     <br>
-    <span style="width:30%">{{calculateSpellCircleSum this.data._id}}&nbsp;/&nbsp;<input style="width:30%" type="number" name="system.memory_palace_slots" value="{{system.memory_palace_slots}}" data-dtype="Number"/></span>
+    <span style="width:30%">{{calculateSpellCircleSum this.data._id "memorized"}}&nbsp;/&nbsp;<input style="width:30%" type="number" name="system.memory_palace_slots" value="{{system.memory_palace_slots}}" data-dtype="Number"/></span>
   </div>
   <div class="flex-group-center" style="align-items:center">
     <h2 style="width:70%;display:inline-block">Spellbook Folios:</h2>
     <br>
-    <span style="width:30%">{{calculateSpellCircleSum this.data._id}}&nbsp;/&nbsp;<input style="width:30%" type="number" name="system.spellbook_folios" value="{{system.spellbook_folios}}" data-dtype="Number"/></span>
+    <span style="width:30%">{{calculateSpellCircleSum this.data._id "in_spellbook"}}&nbsp;/&nbsp;<input style="width:30%" type="number" name="system.spellbook_folios" value="{{system.spellbook_folios}}" data-dtype="Number"/></span>
   </div>
 </div>
 
@@ -28,15 +28,21 @@
     {{#each spells as |item id|}}
     {{!-- {{#each spells as |item id|}} --}}
       <li class="item flexrow" data-item-id="{{item._id}}">
-        <div class="item-name flexrow" style="flex: 1;flex-basis: 170px">
+        <div class="item-name flexrow" style="flex: 1;flex-basis: 148px">
           <div class="item-image">
             <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
           </div>
           <h4><a class="item-control item-edit">{{item.name}}</a></h4>
         </div>
         <div style="text-align:center">{{item.system.circle}}</div>
-        <div style="text-align:center"><input type="checkbox" name="itemCheckboxOnActor.{{item._id}}.system.memorized" class="itemCheckboxOnActor"></div>
-        <div style="text-align:center"><input type="checkbox" name="itemCheckboxOnActor.{{item._id}}.system.in_spellbook" class="itemCheckboxOnActor"></div>
+        <div style="text-align:center">        
+          {{#if item.system.memorized}}✓{{else}}✗{{/if}}
+        </div>
+        <div style="text-align:center">        
+          {{#if item.system.in_spellbook}}✓{{else}}✗{{/if}}
+        </div>
+        {{!-- <div style="text-align:center"><input type="checkbox" name="itemCheckboxOnActor.{{item._id}}.system.memorized" class="itemCheckboxOnActor"></div> --}}
+        {{!-- <div style="text-align:center"><input type="checkbox" name="itemCheckboxOnActor.{{item._id}}.system.in_spellbook" class="itemCheckboxOnActor"></div> --}}
         <div class="item-controls">
           <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>

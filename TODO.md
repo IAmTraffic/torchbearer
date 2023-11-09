@@ -1,9 +1,6 @@
 # Bugs
 
 # Currently working on
- - Add the forgotten spell characteristics
-    - line 88 of actor-sheet.mjs
-    - full rewrite? too tired
  - Add the forgotten invocation characteristics
  - Nix the Weapon item type, and just give Monsters a text field
 

@@ -71,11 +71,13 @@ Handlebars.registerHelper('capitalize', function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 });
 
-Handlebars.registerHelper("calculateSpellCircleSum", function(str) {
-  let actorData = game.actors.get(str).sheet.getData();
+Handlebars.registerHelper("calculateSpellCircleSum", function(actor_id, spell_feature_for_filter) {
+  let actorData = game.actors.get(actor_id).sheet.getData();
   let circles = 0;
   for(let spell of actorData.spells){
-    if(spell.system.memorized){
+    console.log(spell.system)
+    console.log(spell.system[spell_feature_for_filter])
+    if(spell.system[spell_feature_for_filter]){
       circles += spell.system.circle;
     }
   }
