@@ -7,6 +7,7 @@
  - compendium of spells
  - compendium of invocations
  - compendium of level features
+ - use items for Monsters' Special Rules instead of a text field?
  - new Actor types:
     - companion (cousins, apprentices, etc.)
     - hireling?
