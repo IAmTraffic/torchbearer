@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["Character", "Monster", "Grind"],
+    "types": ["Character", "Monster"],
     "Character": {
       "who_you_are": {
         "stock": "",
@@ -424,10 +424,6 @@
       },
       "armor": "",
       "weapons": ""
-    },
-    "Grind": {
-      "turn": 0,
-      "actors": []
     }
   },
   "Item": {

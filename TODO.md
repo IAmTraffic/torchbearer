@@ -7,6 +7,10 @@
  - compendium of spells
  - compendium of invocations
  - compendium of level features
+ - new Actor types:
+    - companion (cousins, apprentices, etc.)
+    - hireling?
+    - lightsource?
 
 # Might happen / Undecided as to whether it is right for the system
 Character sheet
