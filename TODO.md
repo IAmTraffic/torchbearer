@@ -1,6 +1,7 @@
 # Bugs
 
 # Currently working on
+- make universal grind actor
 
 # Going to happen
  - UI overhaul
@@ -17,5 +18,4 @@
 Character sheet
  - rework items to be Foundry Items, not text boxes
  
-- make universal grind
 - make universal conflict page

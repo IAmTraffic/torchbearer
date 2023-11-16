@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["Character", "Monster"],
+    "types": ["Character", "Monster","Grind"],
     "Character": {
       "who_you_are": {
         "stock": "",
@@ -424,6 +424,10 @@
       },
       "armor": "",
       "weapons": "<table style=\"height: 53px; width: 93.8988%;\" border=\"1\"><colgroup><col style=\"width: 37.62%;\"><col style=\"width: 23.475%;\"><col style=\"width: 9.70041%;\"><col style=\"width: 9.84151%;\"><col style=\"width: 9.68278%;\"><col style=\"width: 9.68278%;\"></colgroup>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><strong>Weapon</strong></td>\n<td style=\"text-align: center;\"><strong>Conflict</strong></td>\n<td style=\"text-align: center;\"><strong>A</strong></td>\n<td style=\"text-align: center;\"><strong>D</strong></td>\n<td style=\"text-align: center;\"><strong>F</strong></td>\n<td style=\"text-align: center;\"><strong>M</strong></td>\n</tr>\n<tr>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n</tbody>\n</table>"
+    },
+    "Grind": {
+      "turn": 1,
+      "actor_list": {}
     }
   },
   "Item": {

@@ -111,37 +111,44 @@ export class TorchbearerActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareItems(context) {
-    let spells = [];
-    let invocations = [];
-    let features = [];
-    let weapons = [];
-    let allies_and_enemies = [];
-    let skills = [];
+    if(context.actor.type === "Character"){
+      let spells = [];
+      let invocations = [];
+      let features = [];
+      let weapons = [];
+      let allies_and_enemies = [];
+      let skills = [];
 
-    for(let i of context.items){
-      i.img = i.img || DEFAULT_TOKEN;
-      
-      if(i.type === "Spell"){
-        spells.push(i)
-      }else if(i.type === "Invocation"){
-        invocations.push(i)
-      }else if(i.type === "Level Feature"){
-        features.push(i)
-      }else if(i.type === "Weapon"){
-        weapons.push(i)
-      }else if(i.type === "NPC"){
-        allies_and_enemies.push(i)
-      }else if(i.type === "Skill"){
-        skills.push(i)
+      for(let i of context.items){
+        i.img = i.img || DEFAULT_TOKEN;
+        
+        if(i.type === "Spell"){
+          spells.push(i)
+        }else if(i.type === "Invocation"){
+          invocations.push(i)
+        }else if(i.type === "Level Feature"){
+          features.push(i)
+        }else if(i.type === "Weapon"){
+          weapons.push(i)
+        }else if(i.type === "NPC"){
+          allies_and_enemies.push(i)
+        }else if(i.type === "Skill"){
+          skills.push(i)
+        }
       }
-    }
 
-    context.spells = spells
-    context.invocations = invocations
-    context.features = features
-    context.weapons = weapons
-    context.allies_and_enemies = allies_and_enemies
-    context.skills = skills
+      context.spells = spells
+      context.invocations = invocations
+      context.features = features
+      context.weapons = weapons
+      context.allies_and_enemies = allies_and_enemies
+      context.skills = skills
+    }else if(context.actor.type === "Grind"){
+      let actors = [];
+      
+
+      context.actors = actors;
+    }
   }
 
   /* -------------------------------------------- */
@@ -247,6 +254,28 @@ export class TorchbearerActorSheet extends ActorSheet {
 
     // Finally, create the item!
     return await Item.create(itemData, {parent: this.actor});
+  }
+
+  //Credit to ChaosOS on the FoundryVTT Discord for this
+  async _onDropActor(event, data) {
+    // Returns false if user does not have
+    super._onDropActor(event, data);
+    // owners permissions of the organization
+    const dropActor = await fromUuid(data.uuid);
+    if (dropActor.pack) {
+      ui.notifications.warn("KNW.Warfare.Commander.Warning.Pack", {
+        localize: true,
+      });
+      return false;
+    } else if (
+      !foundry.utils.getProperty(dropActor, "system.attributes.prof")
+    ) {
+      ui.notifications.warn("KNW.Warfare.Commander.Warning.NoProf", {
+        localize: true,
+      });
+      return false;
+    }
+    this.actor.update({ "system.commander": dropActor.id });
   }
 
   /**
