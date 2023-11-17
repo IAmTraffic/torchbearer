@@ -7,8 +7,8 @@
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         <div>
           <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-          <label class="resource-label">
-            <span>
+          <div style="">
+            <span style="float:left;line-height:26px"><b>A 
               {{#if (eq system.who_you_are.level 1)}}
               {{system.who_you_are.level}}st
               {{else}}
@@ -22,10 +22,10 @@
                   {{/if}}
                 {{/if}}
               {{/if}}
-              Level 
+              Level {{system.who_you_are.class}} played by</b>
             </span>
-            {{system.who_you_are.class}}
-          </label>
+            <input style="margin-left:5px;padding-left:5px;float:left;width:200px" type="text" name="system.player_name" value="{{system.player_name}}" placeholder="Your Name" data-dtype="String"/>
+          </div>
         </div>
       </div>
       

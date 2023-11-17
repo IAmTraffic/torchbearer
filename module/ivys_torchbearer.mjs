@@ -82,6 +82,16 @@ Handlebars.registerHelper("calculateSpellCircleSum", function(actor_id, spell_fe
   return circles;
 })
 
+Handlebars.registerHelper("getActorCharacterName", function(actor_id) {
+  let actor = game.actors.get(actor_id);
+  return actor.name;
+})
+
+Handlebars.registerHelper("getActorPlayerName", function(actor_id) {
+  let actor = game.actors.get(actor_id);
+  return actor.system.player_name;
+})
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

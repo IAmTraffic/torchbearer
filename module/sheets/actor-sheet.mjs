@@ -179,38 +179,24 @@ export class TorchbearerActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    // //Change an item's data based on action on the owning actor's sheet
-    // html.find('.itemCheckboxOnActor').on("change", ev => {
-    //   let target = ev.target;
-    //   let new_value = target.checked;
-    //   let field_path = target.name.slice(20, target.name.length);
-    //   let items = this.actor.items;
-    //   let item = items.get(field_path.split(".")[0]);
+    //Delete Actor from Grind
+    html.find(".grindActorDeleteButton").click(ev => {
+      const li = $(ev.currentTarget).parents(".item");
+      let update = {};
+      update["system.actor_list.-=" + li.data("itemId")] = null;
+      this.actor.update(update)
+      li.slideUp(200, () => this.render(false));
+    })
 
-    //   setObjectPropertyByDynamicPath(item, field_path, new_value);
-
-    //   this.getData()  //Jog the sheet with the update
-    // })
-
-    // function setObjectPropertyByDynamicPath(object, path, value){
-    //   let splitMyPath = path.split(".");
-    //   if(splitMyPath.length >= 1){
-    //     return sOPBDPHelper(object, splitMyPath.slice(1, splitMyPath.length), value);
-    //   }else{
-    //     console.error("Bad Split Path: " + splitMyPath.toString())
-    //     return object;
-    //   }
-    // }
-
-    // function sOPBDPHelper(object, pathArray, value){
-    //   if(pathArray.length == 1){
-    //     object[pathArray[0]] = value;
-    //     return object;
-    //   }else{
-    //     object[pathArray[0]] = sOPBDPHelper(object[pathArray[0]], pathArray.slice(1, pathArray.length), value);
-    //     return object;
-    //   }
-    // }
+    ////Advancing / Decreasing Grind
+    //Advancing
+    html.find(".advanceGrind").click(ev => {
+      this.actor.update({"system.turn": (this.actor.system.turn + 1) % 5})
+    })
+    //Decreasing
+    html.find(".decreaseGrind").click(ev => {
+      this.actor.update({"system.turn": this.actor.system.turn - 1})
+    })
 
     // Active Effect management
     html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
@@ -256,26 +242,26 @@ export class TorchbearerActorSheet extends ActorSheet {
     return await Item.create(itemData, {parent: this.actor});
   }
 
-  //Credit to ChaosOS on the FoundryVTT Discord for this
+  //Credit to ChaosOS on the FoundryVTT Discord for much of this
   async _onDropActor(event, data) {
+    //Returns false if this isn't the Grind type of Actor
+    if(!(this.actor.type === "Grind")) return false
+
     // Returns false if user does not have
-    super._onDropActor(event, data);
+    if (!super._onDropActor(event, data)) return false
     // owners permissions of the organization
     const dropActor = await fromUuid(data.uuid);
-    if (dropActor.pack) {
-      ui.notifications.warn("KNW.Warfare.Commander.Warning.Pack", {
-        localize: true,
-      });
-      return false;
-    } else if (
-      !foundry.utils.getProperty(dropActor, "system.attributes.prof")
-    ) {
-      ui.notifications.warn("KNW.Warfare.Commander.Warning.NoProf", {
-        localize: true,
-      });
-      return false;
-    }
-    this.actor.update({ "system.commander": dropActor.id });
+
+    //if not already on list
+    if(Object.keys(this.actor.system.actor_list).includes(dropActor._id)) return true
+
+    //create new list item (only used because Foundry doesn't like having arrays in system. we are just going to use the Object.keys(system.actor_list) as our array)
+    let new_actor = {}
+
+    //add to list
+    this.actor.system.actor_list[dropActor._id] = new_actor;
+
+    this.actor.update({"system.actor_list": this.actor.system.actor_list});
   }
 
   /**
